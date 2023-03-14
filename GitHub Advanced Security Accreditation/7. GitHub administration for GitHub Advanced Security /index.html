@@ -15,7 +15,7 @@
         <link rel="next" href="../8.%20Manage%20sensitive%20data%20and%20security%20policies%20within%20GitHub/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -1025,11 +1025,13 @@
 <li>
 <p>Identify which GitHub Advanced Security features are available for open-source projects and which are available on enterprise products.</p>
 <ul>
-<li>All of the features are available with Advanced security license for both public and private repositories without any limitations.</li>
-<li><code>Code scanning</code>: Automatically detect common vulnerabilities and coding errors. Available for public repositories. Unavailable for private repositories.</li>
-<li><code>Secret scanning</code>: Receive alerts when secrets or keys are checked in, exclude files from scanning, and define up to 100 custom patterns. Available for public repositories woth limited functionality only. Unavailable for private repositories.</li>
+<li>All of the features are available with Advanced security license for both public and private repositories without any limitations. The availability of the features described below without having a GHAS license plan enabled:<ul>
+<li><code>Code scanning</code>: Automatically detect common vulnerabilities and coding errors. Available for public repositories. Unavailable for private repositories. </li>
+<li><code>Secret scanning</code>: Receive alerts when secrets or keys are checked in, exclude files from scanning, and define up to 100 custom patterns. Available for public repositories with limited functionality only. Unavailable for private repositories.</li>
 <li><code>Dependency review</code>: Show the full impact of changes to dependencies and see details of any vulnerable versions before you merge a pull request. Available for public repositories. Unavailable for private repositories.</li>
 <li><code>Security overview</code>: Review the security configuration and alerts for an organization and identify the repositories at greatest risk. Unavailable for public and private repositories. </li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -1043,9 +1045,8 @@
 </ol>
 </li>
 <li>Enabling <code>GHAS</code> for <code>GHES</code>:<ul>
-<li>Enable GHAS for GHES:<ul>
 <li>Can be done using <code>GitHub UI</code> or <code>SSH</code></li>
-<li>Make sure:<ul>
+<li>Make sure that:<ul>
 <li>License for GHES been upgraded to include GHAS</li>
 <li>You reviewed prerequisites for the features you plan to enable. (Prerequisites for code scanning, secret scanning and Dependabot)</li>
 <li>Enabling GitHub Advanced Security features on your Enterprise Server instance will cause user-facing services on GitHub Enterprise Server to restart. You should time this change carefully to minimize downtime for users.</li>
@@ -1067,8 +1068,6 @@
 <li><code>Dependency graph</code></li>
 <li><code>Code scanning</code></li>
 <li><code>Secret scanning</code></li>
-</ul>
-</li>
 <li>Click <code>Save Settings</code></li>
 </ul>
 </li>
@@ -1101,7 +1100,7 @@
 <p>Set security policies at the organization and repository levels.</p>
 <ul>
 <li>To make sure everyone is using GHAS is to set up a security policy at the organization level.</li>
-<li>Policies can be configured for all orhanizations owned by your account, or for individual organizations.</li>
+<li>Policies can be configured for all organizations owned by your account, or for individual organizations.</li>
 <li>To configure the policy on a organization level:<ul>
 <li><code>Policies</code> &gt; <code>Advanced security</code></li>
 <li>Under <code>GitHub Advanced Security</code> select the drop-down menu and select a policy for the organizations owned by your enterprise:<ul>
@@ -1211,7 +1210,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
     
   </body>

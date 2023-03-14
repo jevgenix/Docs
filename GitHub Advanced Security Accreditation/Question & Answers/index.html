@@ -15,7 +15,7 @@
         <link rel="next" href="../Instructions/Code%20Scanning/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -1451,8 +1451,8 @@
 <p>What are the two types of queries and what it requires?</p>
 <ul>
 <li>@kind has only two options:</li>
-<li>problem (same as Alert) </li>
-<li>path problem (same as Path)</li>
+<li>problem (same as Alert queries) </li>
+<li>path problem (same as Path queries)</li>
 <li>metadata is required</li>
 </ul>
 </li>
@@ -1654,6 +1654,9 @@
 <p>What are required names for configuration files in GHAS?</p>
 <ul>
 <li><code>dependabot.yml</code>: for Dependabot configuration</li>
+<li>QL pack must contain a <code>qlpack.yml</code> file</li>
+<li>code scanning workflow file must be named as <code>codeql-config.yml</code></li>
+<li></li>
 </ul>
 </li>
 <li>
@@ -1678,6 +1681,98 @@
 <p>How CodeQL works during data base creation for interpreted languages?</p>
 <ul>
 <li>CodeQL extracts a single relation representation of each source file in the codebase by running on the source code, resolving dependencies to give an accurate representation of the codebase.</li>
+</ul>
+</li>
+<li>
+<p>How many options users have for specigying which queries to run with CodeQL code scanning?</p>
+<ul>
+<li>Two options, using code scanning workflow or a custom configuration file.</li>
+</ul>
+</li>
+<li>
+<p>What are the options to specify the additional queries?</p>
+<ul>
+<li><code>packs</code> to install one or more CodeQL query packs</li>
+<li><code>queries</code> to specify a single <code>.ql</code> file, a directory containing multiple <code>.ql</code> files, query definition file <code>.qls</code>, or any combintation</li>
+<li>It is possible to use both packs and queries in the same workflow file.</li>
+</ul>
+</li>
+<li>
+<p>How to add one or more CodeQL query packs?</p>
+<ul>
+<li>by using <code>with: packs</code> parameter along with the <code>uses: github/codeql-action/init@v1</code> action in the workflow file.</li>
+</ul>
+</li>
+<li>
+<p>How to specify a comma-separated list of packs to download in the workflow?
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>- uses: github/codeql-action/init@v1
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  with:
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    # Comma-separated list of packs to download
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    packs: scope/pack1,scope/pack2@1.2.3,scope/pack3@~1.2.3
+</code></pre></div></p>
+</li>
+<li>
+<p>What is the value to provide a token to access queries stored in private repository?</p>
+<ul>
+<li><code>external-repository-token: ${{ secrets.ACCESS_TOKEN }}</code></li>
+</ul>
+</li>
+<li>
+<p>What query suites are built into CodeQL code scanning tool?</p>
+<ul>
+<li><code>code-scanning, security-extended and security-and-quality</code></li>
+</ul>
+</li>
+<li>
+<p>What is the action to take to specify the configuration file for CodeQL code scanning in the workflow file?</p>
+<ul>
+<li>by using <code>github/codeql-action/inite@v1</code> along with <code>with: config-file: &lt;path-to-config-file&gt;</code> parameter.</li>
+</ul>
+</li>
+<li>
+<p>How to refernce to a configuration file located in a external repositroy?</p>
+<ul>
+<li>by using <code>OWNER/REPOSITORY/FILENAME@BRANCH</code> syntax</li>
+</ul>
+</li>
+<li>
+<p>How do you specify and CodeQL query packs to run in a custom configuration file?</p>
+<ul>
+<li>by using a nested map of packs:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>packs:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  # Use these packs for JavaScript analysis
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  javascript:
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    - scope/js-pack1
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    - scope/js-pack2
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  # Use these packs for Java analysis
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  java:
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    - scope/java-pack1
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>What is the rule for character when using <code>paths-ignore</code> keyword?</p>
+<ul>
+<li>characters can only be at the start or end of a line, or surrounded by slashes. For example <code>foo/**, **/foo, and foo/**/bar</code> are all valid patterns.</li>
+</ul>
+</li>
+<li>
+<p>What kind of information CodeQL database schema includes?</p>
+<ul>
+<li><code>expressions</code> and <code>statements</code> tables</li>
+<li>CodeQL library defines classes to provide a layer of abstraction over the each of these tables. This includes the related auxuliary tables <code>Expr</code> and <code>Stmt</code>.</li>
+</ul>
+</li>
+<li>
+<p>What are the levels to monitor security alerts using Security overview?</p>
+<ul>
+<li><code>Organization</code>, <code>Team</code> and <code>Repository</code> levels</li>
+</ul>
+</li>
+<li>
+<p>What are the permissions you can grant to users on each level of your control over GitHub Advanced Security?</p>
+<ul>
+<li><code>None</code>, <code>Read</code>, <code>Write</code> and <code>Admin</code> permissions</li>
 </ul>
 </li>
 </ol>
@@ -1721,7 +1816,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
     
   </body>

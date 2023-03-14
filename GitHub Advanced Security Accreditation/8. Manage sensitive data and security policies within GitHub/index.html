@@ -15,7 +15,7 @@
         <link rel="next" href="../9.%20Required%20permissions/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c4a75a56.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -1049,14 +1049,14 @@
 </ul>
 </li>
 <li>GitHub considers these files to have specific purpose and requires to follow the listed naming scheme</li>
+<li>These files record information about: security preparation, key contacts, and the project background.</li>
 <li>GitHub will use and display these default files for any repository owned by the account that does not have its own file of that type in any of the following places:<ul>
 <li>The root of the repository</li>
 <li>The <code>.github</code> directory</li>
 <li>The <code>docs</code> directory</li>
 </ul>
 </li>
-<li>SECURTY.MD is primary document for communicating security information. It includes:</li>
-<li>These files record information about: security preparation, key contacts, and the project background.<ul>
+<li>SECURTY.MD is primary document for communicating security information. It includes:<ul>
 <li>a list of supported versions of project</li>
 <li>a way to report a security vulnerability</li>
 <li>Also it may include:<ul>
@@ -1073,7 +1073,7 @@
 <p>Security Advisories</p>
 <ul>
 <li>Security advisories should be comprehensive and include:  <ul>
-<li>Protuct and version affected</li>
+<li>Product and version affected</li>
 <li>Severity</li>
 <li>Types of security weaknesses addressed by the project owners actions</li>
 <li>Impact, status of patches, and workarounds</li>
@@ -1109,7 +1109,7 @@
 <li>The syntax is complex and it has strong risk of creating unforeseen problems in a repository's integrity, especially if its executed on Windows operating system.</li>
 </ul>
 </li>
-<li><code>BFG Repo-Cleaner</code> is efficient and easy to use. It provides a set of default actions to choose from that match many common use canses related to sensitive data.<ul>
+<li><code>BFG Repo-Cleaner</code> is efficient and easy to use. It provides a set of default actions to choose from that match many common use cases related to sensitive data.<ul>
 <li>The tool is limited in its capabilities to these cases, giving you little opportunity to customize for unusual circumstances.</li>
 </ul>
 </li>
@@ -1118,7 +1118,7 @@
 <li>GitHub recommend merging or closing all open pull requests before removing files from repository using these tools.</li>
 <li>Using <code>BFG Repo-Cleaner</code>:<ul>
 <li>To remove file with sensitive data and leave latest commit untouched, run:<ul>
-<li>`bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA``</li>
+<li><code>bfg --delete-files YOUR-FILE-WITH-SENSITIVE-DATA</code></li>
 </ul>
 </li>
 <li>To replace all text listed in <code>passwords.txt</code>, wherever it can be fount in repository's history, run:<ul>
@@ -1134,32 +1134,35 @@
 <li>
 <p>Using <code>git filter-repo</code>:</p>
 <ul>
-<li>If you run <code>git filter-repo</code> after stashing changes, you won't be able to retrieve your changes with other stash commands. Before running <code>git filter-repo</code>, GitHub recommend unstashing and changes you've made. To unstash changes, run:<ul>
+<li>If you run <code>git filter-repo</code> after stashing changes, you won't be able to retrieve your changes with other stash commands. Before running <code>git filter-repo</code>, GitHub recommend unstashing changes you've made. To unstash changes, run:<ul>
 <li><code>git stash show -p | git apply -R</code></li>
 </ul>
 </li>
 <li>Install latest release of the <code>git filter-repo</code> tool</li>
 <li>Navigate into repository's local working directory</li>
 <li>Run the following command:<ul>
-<li><code>git filter-repo --invert-paths --path PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA</code></li>
+<li><code>git filter-repo --invert-paths --path PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA</code><ul>
 <li>This command forces Git to process the entire history of every branch and tag</li>
-<li>Remove the soecified file</li>
-<li>Remove some configurations such as the remote URL stired in th <code>.git/config</code> file</li>
-<li>Overwrute existing tags</li>
+<li>Removes the specified file</li>
+<li>Removes some configurations such as the remote URL stired in the <code>.git/config</code> file</li>
+<li>Overwrites existing tags</li>
 </ul>
 </li>
-<li>Add file with sensitive data to <code>gitignore</code></li>
-<li>Verify the process</li>
+</ul>
+</li>
+<li>Add file with sensitive data to <code>.gitignore</code> and verify the process</li>
 <li>Force push changes to GitHub<ul>
-<li><code>git push origin --force --all</code>
--In order to remove the sensitive file from tagged releases, you will also need to force-push against Git tags:</li>
+<li><code>git push origin --force --all</code></li>
+</ul>
+</li>
+<li>In order to remove the sensitive file from tagged releases, you will also need to force-push against Git tags:<ul>
 <li><code>git push origin --force --tags</code></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p>GitHub support technicians can assist you with removing confidential information</p>
+<p>GitHub support technicians can assist with removing confidential information</p>
 </li>
 <li>For instance you might have removed sensitive data from a repository, however you need to make sure they don't appear in forks of that repository</li>
 <li>Private information removal requests are appropriate for:<ul>
@@ -1174,7 +1177,7 @@
 <li>
 <p>Reporting and logging</p>
 <ul>
-<li>log records are the information about actions that affect the organization including:<ul>
+<li>log records is the information about actions, that affect the organization including:<ul>
 <li>The repository in which the action was performed</li>
 <li>The user that performed the action</li>
 <li>The action that was performed</li>
@@ -1256,7 +1259,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
       
     
   </body>
