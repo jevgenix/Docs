@@ -1,0 +1,21 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: squidfunk/mkdocs-material
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: mkdocs build --verbose --clean --strict
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
