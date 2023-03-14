@@ -231,8 +231,8 @@
 
 68. What are the two types of queries and what it requires?
     - @kind has only two options:
-      - problem (same as Alert) 
-      - path problem (same as Path)
+      - problem (same as Alert queries) 
+      - path problem (same as Path queries)
     - metadata is required
 
 69. How qlpack.yml syntax looks like?
@@ -360,6 +360,9 @@
 
 96. What are required names for configuration files in GHAS?
     - `dependabot.yml`: for Dependabot configuration
+    - QL pack must contain a `qlpack.yml` file
+    - code scanning workflow file must be named as `codeql-config.yml`
+    - 
   
 
 97. Who will the secret scanning tool notify about the breach?
@@ -373,4 +376,61 @@
 
 100. How CodeQL works during data base creation for interpreted languages?
     - CodeQL extracts a single relation representation of each source file in the codebase by running on the source code, resolving dependencies to give an accurate representation of the codebase.
+
+101. How many options users have for specigying which queries to run with CodeQL code scanning?
+    - Two options, using code scanning workflow or a custom configuration file.
+
+102. What are the options to specify the additional queries?
+    - `packs` to install one or more CodeQL query packs
+    - `queries` to specify a single `.ql` file, a directory containing multiple `.ql` files, query definition file `.qls`, or any combintation
+    - It is possible to use both packs and queries in the same workflow file.
+
+103. How to add one or more CodeQL query packs?
+    - by using `with: packs` parameter along with the `uses: github/codeql-action/init@v1` action in the workflow file.
+
+104. How to specify a comma-separated list of packs to download in the workflow?
+    ```yml 
+    - uses: github/codeql-action/init@v1
+      with:
+        # Comma-separated list of packs to download
+        packs: scope/pack1,scope/pack2@1.2.3,scope/pack3@~1.2.3
+    ```
+
+105. What is the value to provide a token to access queries stored in private repository?
+    - `external-repository-token: ${{ secrets.ACCESS_TOKEN }}`
+
+106. What query suites are built into CodeQL code scanning tool?
+    - `code-scanning, security-extended and security-and-quality`
+
+107. What is the action to take to specify the configuration file for CodeQL code scanning in the workflow file?
+    - by using `github/codeql-action/inite@v1` along with `with: config-file: <path-to-config-file>` parameter.
+
+108. How to refernce to a configuration file located in a external repositroy?
+    - by using `OWNER/REPOSITORY/FILENAME@BRANCH` syntax
+  
+109. How do you specify and CodeQL query packs to run in a custom configuration file?
+    - by using a nested map of packs:
+    ```yml
+    packs:
+      # Use these packs for JavaScript analysis
+      javascript:
+        - scope/js-pack1
+        - scope/js-pack2
+      # Use these packs for Java analysis
+      java:
+        - scope/java-pack1
+    ```
+
+110. What is the rule for character when using `paths-ignore` keyword?
+    - characters can only be at the start or end of a line, or surrounded by slashes. For example `foo/**, **/foo, and foo/**/bar` are all valid patterns.
+
+111. What kind of information CodeQL database schema includes?
+    - `expressions` and `statements` tables
+    - CodeQL library defines classes to provide a layer of abstraction over the each of these tables. This includes the related auxuliary tables `Expr` and `Stmt`.
+  
+112. What are the levels to monitor security alerts using Security overview?
+    - `Organization`, `Team` and `Repository` levels
+
+113. What are the permissions you can grant to users on each level of your control over GitHub Advanced Security?
+    - `None`, `Read`, `Write` and `Admin` permissions
 
