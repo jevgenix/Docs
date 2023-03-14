@@ -1,0 +1,1357 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../4.%20Configure%20code%20scanning%20on%20GitHub/">
+      
+      
+        <link rel="next" href="../6.%20Identify%20security%20vulnerabilities%20in%20your%20codebase%20with%20CodeQL/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>5. Code Scanning with GitHub CodeQL - MyDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MyDocs" class="md-header__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MyDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Code Scanning with GitHub CodeQL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MyDocs" class="md-nav__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MyDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          GitHub Actions Accreditation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          GitHub Actions Accreditation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/6.%20Questions%20%26%20Answers/" class="md-nav__link">
+        Questions & Answers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          1. Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          1. Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/1.%20Introduction/1-Introduction-to-GitHub-Actions/" class="md-nav__link">
+        Introduction to Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/1.%20Introduction/2-About-GitHub-Actions/" class="md-nav__link">
+        About Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/1.%20Introduction/3-GitHub-Actions-Workflow/" class="md-nav__link">
+        GitHub Actions CI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          2. GitHub Actions Syntax
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2. GitHub Actions Syntax
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/2.%20GitHub%20Actions%20Syntax/1.%20Versioning%2C%20Matrix%20and%20Automation/" class="md-nav__link">
+        1. Versioning, Matrix and Automation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/2.%20GitHub%20Actions%20Syntax/2.%20Conditional-statement/" class="md-nav__link">
+        2. Conditional statement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/2.%20GitHub%20Actions%20Syntax/3.%20Variables/" class="md-nav__link">
+        3. Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/2.%20GitHub%20Actions%20Syntax/4.%20Events/" class="md-nav__link">
+        4. Events
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/2.%20GitHub%20Actions%20Syntax/5.%20Keywords/" class="md-nav__link">
+        5. Keywords
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/2.%20GitHub%20Actions%20Syntax/6.%20Cache%20and%20Artifacts/" class="md-nav__link">
+        6. Using Cache and Artifacts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/2.%20GitHub%20Actions%20Syntax/7.%20Debugging/" class="md-nav__link">
+        7. Debugging
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          3. Package Registries and Custom Actions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          3. Package Registries and Custom Actions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/3.%20Package%20Registries%20and%20Custom%20Actions/1.%20Package%20Registries/" class="md-nav__link">
+        GitHub Package Registries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/3.%20Package%20Registries%20and%20Custom%20Actions/2.%20GitHub%20Packages%20for%20code%20packages/" class="md-nav__link">
+        GitHub Packages for code packages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/3.%20Package%20Registries%20and%20Custom%20Actions/3.%20Publish%20custom%20actions/" class="md-nav__link">
+        Publish a custom GitHub action
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          4. Continuos Delivery
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          4. Continuos Delivery
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/4.%20Continuos%20Delivery/1.%20GitHub%20Secrets/" class="md-nav__link">
+        Storing credentials with GitHub Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/4.%20Continuos%20Delivery/2.%20Deploying%20to%20Microsoft%20Azure/" class="md-nav__link">
+        Deploying to Microsoft Azure using GitHub Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/4.%20Continuos%20Delivery/3.%20Create%20and%20delete%20Azure%20resources/" class="md-nav__link">
+        Create and delete Azure resources by using GitHub Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/4.%20Continuos%20Delivery/4.%20Remove%20artifacts%2C%20create%20status%20badges%2C%20and%20configure%20environment%20protections/" class="md-nav__link">
+        Remove artifacts, create status badges, and configure environment protections
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          5. GitHub Enterprise and Usage Limits
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          5. GitHub Enterprise and Usage Limits
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/5.%20GitHub%20Enterprise%20and%20Usage%20Limits/1.%20Actions%20and%20Workflows/" class="md-nav__link">
+        Action and Workflows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/5.%20GitHub%20Enterprise%20and%20Usage%20Limits/2.%20Runners/" class="md-nav__link">
+        Manage Runners
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/5.%20GitHub%20Enterprise%20and%20Usage%20Limits/3.%20Encrypted%20Secrets/" class="md-nav__link">
+        Manage encrypted secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Actions%20Accreditation/5.%20GitHub%20Enterprise%20and%20Usage%20Limits/4.%20GitHub%20Usage%20Limits/" class="md-nav__link">
+        Usage limits
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          GitHub Advanced Security Accreditation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          GitHub Advanced Security Accreditation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20Introduction/" class="md-nav__link">
+        1. Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20Configure%20Dependabot%20Security%20updates%20on%20your%20GitHub%20repo/" class="md-nav__link">
+        2. Configure Dependabot Security updates on your GitHub repo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Configure%20and%20use%20secret%20scanning%20in%20GitHub%20repository/" class="md-nav__link">
+        3. Configure and use secret scanning in GitHub repository
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20Configure%20code%20scanning%20on%20GitHub/" class="md-nav__link">
+        4. Configure code scanning on GitHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        5. Code Scanning with GitHub CodeQL
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.%20Identify%20security%20vulnerabilities%20in%20your%20codebase%20with%20CodeQL/" class="md-nav__link">
+        6. Identify security vulnerabilities in your codebase with CodeQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.%20GitHub%20administration%20for%20GitHub%20Advanced%20Security%20/" class="md-nav__link">
+        7. GitHub administration for GitHub Advanced Security 
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.%20Manage%20sensitive%20data%20and%20security%20policies%20within%20GitHub/" class="md-nav__link">
+        8. Manage sensitive data and security policies within GitHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.%20Required%20permissions/" class="md-nav__link">
+        9. Required permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Question%20%26%20Answers/" class="md-nav__link">
+        Question & Answers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+          Instructions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_11">
+          <span class="md-nav__icon md-icon"></span>
+          Instructions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Instructions/Code%20Scanning/" class="md-nav__link">
+        Code Scanning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Instructions/Dependabot/" class="md-nav__link">
+        Dependabot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Instructions/GraphQL/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Instructions/Secret%20Scanning/" class="md-nav__link">
+        Secret Scanning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>5. Code Scanning with GitHub CodeQL</h1>
+
+<ol>
+<li>
+<p>Understand CodeQL and how it analyzes code.</p>
+<ul>
+<li>Consists of three steps:<ul>
+<li>Preparing the code, by creating a CodeQL database</li>
+<li>Running CodeQL queries against the database</li>
+<li>Interpreting the results</li>
+</ul>
+</li>
+<li>Database creation:<ul>
+<li>CodeQL first extracts a single relational representation of each source file in the codebase</li>
+<li>For compiled languages, extraction works by monitoring the build process and itincludes a syntatic data about the abstract syntax tree and semantic data about name binding and type information</li>
+<li>For interpreted languages, extractor runs on the source code, resolving dependencies to give an accurate representation of the codebase</li>
+<li>There is one extractor for each language supported by CodeQL</li>
+<li>For multi-language codebases, databases are generated one language at a time</li>
+<li>After extraction, all the data required for analysis is imported into a single directory, known as the CodeQL database</li>
+</ul>
+</li>
+<li>Query execution:<ul>
+<li>After database creation, one or more queries are executed against it</li>
+<li>CodeQL queries are written in QL language</li>
+<li>You can run the queries checked out from the CodeQL repo using the CodeQL for VS Code extension or the CodeQL CLI.</li>
+</ul>
+</li>
+<li>Query results:<ul>
+<li>Queries contain metadata properties that indicate how the results should be interpreted.</li>
+<li>results are output for code review and triaging. </li>
+<li>In CodeQL for Visual Studio Code, interpreted query results are automatically displayed in the source code. </li>
+<li>You can output results generated by the CodeQL CLI into a number of different formats for use with different tools.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Understand QL, a unique logic programming language.</p>
+<ul>
+<li>Analysis engine used to automate security checks</li>
+<li>Variant analysis:<ul>
+<li>the process of using a known security vulnerability such as a seed to find similar problems in the code</li>
+<li>Querying code using CodeQL is the most efficient way to perform variant analysis</li>
+</ul>
+</li>
+<li>CodeQL databases:<ul>
+<li>contain queryable data extracted from a codebase, for a single language at a particular point in time</li>
+<li>contains a full hierarchical representation of the code, including representation of the abstract syntax tree, the data-flow graph, and the control-flow graph</li>
+<li>Each language has its own database schema that defines the relations used to create a database</li>
+</ul>
+</li>
+<li>Query suites<ul>
+<li>Allows to pass multiple queries to CodeQl</li>
+<li>No need to specify the path to each query individually</li>
+<li>Definitions stored in a YAML file, with the <code>.qls</code> extension</li>
+<li>a sequence of instructions where each instruction is a YAML mapping with (usually) as single key</li>
+</ul>
+</li>
+<li>Default query suites:<ul>
+<li><code>code-scannig</code>: queries run by default in CodeQL code scanning on GitHub.</li>
+<li><code>security-extended</code>: queries from <code>code-scanning</code>, plus extra security queries with slightly lower precision and severity.</li>
+<li><code>security-and-quality</code>: queries from <code>code-scanning</code>, <code>security-extended</code>, plus extra maintainability and reliability queries.</li>
+</ul>
+</li>
+<li>Query Language (QL) packs:<ul>
+<li>Packs contain queries, libraries, query suites, and important metadata</li>
+<li>CodeQL contains QL packs for C/C++, C#, Java, JavaScript, Python, and Ruby</li>
+<li>for Go, repository contains a QL pack for Go analysis</li>
+<li>Users are also able to make custom QL packs</li>
+</ul>
+</li>
+<li>QL pack structure:<ul>
+<li>Must contain a file called <code>qlpack.yml</code> in its root directory</li>
+<li>Should be well orgaized:<ul>
+<li>Queries are organized into directories for specific categories.</li>
+<li>Queries for specific products, libraries, and frameworks are organized into their own top-level directories.</li>
+<li>There is a top-level directory named <code>&lt;owner&gt;/&lt;language&gt;</code> for query library (.qll) files. Within this directory, .qll files should be organized into subdirectories for specific categories.</li>
+</ul>
+</li>
+<li>An example of <code>qlpack.yml</code>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>name: codeql/java-queries
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>version: 0.0.6-dev
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>groups: java
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>suites: codeql-suites
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>extractor: java
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>defaultSuiteFile: codeql-suites/java-code-scanning.qls
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>dependencies:
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    codeql/java-all: &quot;*&quot;
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    codeql/suite-helpers: &quot;*&quot;
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Configure code scanning:</p>
+<ul>
+<li>4 ways:<ul>
+<li>CodeQL: GitHub Actions</li>
+<li>CodeQL: in a third-party CI system</li>
+<li>Third-party: GitHub Actions</li>
+<li>Third-party: Generated externally and then uploaded to GitHub</li>
+</ul>
+</li>
+<li>There are two options for specifying which queries to run with CodeQl code scanning:<ul>
+<li>Using code scanning workflow</li>
+<li>Using a custom configuration file</li>
+</ul>
+</li>
+<li>The options to specify the additional queries are:<ul>
+<li><code>packs</code> to install one or more CodeQL query packs and run the default query suite for these packs.</li>
+<li><code>queries</code> to specify a single <code>.ql</code> file, a directory containing multiple <code>.ql</code> files, a <code>.qls</code> query suite definition file, or any combination.</li>
+</ul>
+</li>
+<li>It is possible to use both packs and queries in the same workflow.</li>
+<li>GitHub don't recommend referencing quiry suites directly from the github/codeql repository, like <code>github/codeql/cpp/ql/src@main</code>. Such queries may not be complied with the same version of CodeQL as used for other queries, which could lead to errors during analysis.</li>
+<li>Use CodeQL query packs:<ul>
+<li>To add one or more CodeQL query packs, add <code>with: packs:</code> entry within the <code>uses: github/codeql-action/init@v1</code> section of the workflow.</li>
+<li><code>GITHUB_TOKEN</code> environment variable is required in ordet to use packages that aren't publicly available.</li>
+<li>An example:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>- uses: github/codeql-action/init@v1
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  with:
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    # Comma-separated list of packs to download
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    packs: scope/pack1,scope/pack2@1.2.3,scope/pack3@~1.2.3
+</code></pre></div></li>
+</ul>
+</li>
+<li>Use queries in QL packs:<ul>
+<li>To add one or more queries, add w <code>with: queries:</code> entry within the <code>uses: github/codeql-action/init@v1</code> section of the workflow.</li>
+<li>If queries are in a private repository, use the <code>external-repository-token</code> parameter to specify a token that has access token that has access to check out the private repository.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>- uses: github/codeql-action/init@v1
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  with:
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    queries: COMMA-SEPARATED LIST OF PATHS
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    # Optional. Provide a token to access queries stored in private repositories.
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    external-repository-token: ${{ secrets.ACCESS_TOKEN }}
+</code></pre></div></li>
+<li>You can also specify query suites in the value of queries.</li>
+<li>Query suites are collections of queries, usually grouped by purpose or language.</li>
+<li>The following query suites are built into CodeQL code scanning:<ul>
+<li><code>code-scanning</code>: queries run by default in CodeQL code scanning on GitHub.</li>
+<li><code>security-extended</code>: queries of lower severity and precision than the default queries</li>
+<li><code>security-and-quality</code>: queries from security-extended, plus maintainability and reliability queries.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Combining queries from a workflow file and a custom configuration file:<ul>
+<li>If you also use a configuration file for custom settings, any additional packs or queries specified in your workflow are used instead of those specified in the configuration file. If you want to run the combined set of additional packs or queries, prefix the value of packs or queries in the workflow with the <code>+</code> symbol:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>- uses: github/codeql-action/init@v1
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  with:
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    config-file: ./.github/codeql/codeql-config.yml
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    queries: +security-and-quality,octo-org/python-qlpack/show_ifs.ql@main
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    packs: +scope/pack1,scope/pack2@v1.2.3`
+</code></pre></div></li>
+</ul>
+</li>
+<li>Additional queries in a custom configuration file:<ul>
+<li>In the workflow file, use the <code>config-file</code> paratemeter of the <code>init</code> action to specify the configuration file you want to use:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>- uses: github/codeql-action/init@v1
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  with:
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    config-file: ./.github/codeql/codeql-config.yml
+</code></pre></div></li>
+<li>Configuration file can be located within the repository or in an external repository.</li>
+<li>In order to reference configuration file located in external repository, use <code>OWNER/REPOSITORY/FILENAME@BRANCH</code> syntax. For example: <code>octo-org/shared/codeql-config.yml@main</code></li>
+<li>If configuration is located in an external private repository, use <code>external-repository-token</code> parameter of the <code>init</code> action to specify a token that has access to the private repository.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>- uses: github/codeql-action/init@v1
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  with:
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    external-repository-token: ${{ secrets.ACCESS_TOKEN }}
+</code></pre></div></li>
+</ul>
+</li>
+<li>Specify CodeQL query packs in custom configuration files:<ul>
+<li>Query can be specified in an array:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>packs:
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  # Use the latest version of &#39;pack1&#39; published by &#39;scope&#39;
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  - scope/pack1
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  # Use version 1.23 of &#39;pack2&#39;
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  - scope/pack2@v1.2.3
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  # Use the latest version of &#39;pack3&#39; compatible with 1.23
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  - scope/pack3@~1.2.3
+</code></pre></div></li>
+<li>If workflow generates more than one CodeQL database, you can specify any CodeQL query packs to run in a custom configuration file using a nested map of packs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>packs:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  # Use these packs for JavaScript analysis
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  javascript:
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    - scope/js-pack1
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    - scope/js-pack2
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  # Use these packs for Java analysis
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  java:
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    - scope/java-pack1
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    - scope/java-pack2@v1.0.0
+</code></pre></div></li>
+</ul>
+</li>
+<li>Specify additional queries in custom configuration:<ul>
+<li>Can be specified in a queries array</li>
+<li>Each element of array contains a uses parameter with a value that identifies a single query file, a directory containing query files, or a query suite definition:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>name: &quot;My CodeQL config&quot;
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>disable-default-queries: true
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>queries:
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  - name: Use an in-repository QL pack (run queries in the my-queries directory)
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    uses: ./my-queries
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>  - name: Use an external JavaScript QL pack (run queries from an external repo)
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    uses: octo-org/javascript-qlpack@main
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  - name: Use an external query (run a single query from an external QL pack)
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    uses: octo-org/python-qlpack/show_ifs.ql@main
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>  - name: Use a query suite file (run queries from a query suite in this repo)
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    uses: ./codeql-qlpacks/complex-python-qlpack/rootAndBar.qls
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>paths:
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>  - src
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>paths-ignore:
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>  - src/node_modules
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>  - &#39;**/*.test.js&#39;
+</code></pre></div></li>
+</ul>
+</li>
+<li>Disabling default queries:<ul>
+<li>To disable default queries, use <code>disable-default-queries: true</code> syntax.</li>
+<li>This syntax should be used to construct a custom query suite that excludes a particular rule. (to avoid having all of the queries run twice)</li>
+</ul>
+</li>
+<li>Specify directories to scan:<ul>
+<li>To specify directories to scan, use <code>paths</code> and <code>paths-ignore</code> parameters.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>paths:
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  - src
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>paths-ignore:
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  - src/node_modules
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  - &#39;**/*.test.js&#39;
+</code></pre></div></li>
+<li>The paths and paths-ignore keywords, used in the context of the code scanning configuration file, should not be confused with the same keywords when used for <code>on.&lt;push|pull_request&gt;.paths</code> in a workflow. When they're used to modify <code>on.&lt;push|pull_request&gt;</code> in a workflow, they determine whether the actions will be run when someone modifies code in the specified directories.</li>
+<li>The filter pattern characters ?, +, [, ], and ! aren't supported and will be matched literally.</li>
+<li><strong> characters can only be at the start or end of a line, or surrounded by slashes, and you can't mix </strong> and other characters. For example: <code>foo/**</code>, <code>**/foo</code>, and <code>foo/**/bar</code> are all allowed syntax, but **foo isn't. However ,you can use single stars along with other characters, as shown in the example. You'll need to quote anything that contains a * character.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Using CodeQL CLI:</p>
+<ul>
+<li>CodeQL CLI commands:<ul>
+<li><code>database create</code>: to create a CodeQL database</li>
+<li><code>database analyze</code>: to run queries against a database</li>
+<li><code>github upload-results</code>: to upload results (SARIF files) to GitHub</li>
+<li><code>--help</code>: to get help command-line options</li>
+</ul>
+</li>
+<li>Create CodeQL databases to analyze:<ul>
+<li>Checkout the code to analyze &gt; set up the environment of the codebase &gt; find the build command &gt; run <code>codeql database create</code> command:<ul>
+<li>to create one CodeQL database for a single supported language, use:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>codeql<span class="w"> </span>database<span class="w"> </span>create<span class="w"> </span>&lt;database&gt;<span class="w"> </span>--command&lt;build&gt;<span class="w"> </span>--language<span class="o">=</span>&lt;language-identifier&gt;
+</code></pre></div></li>
+<li>to create one CodeQL database per language for multiple supported languages, use:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>codeql<span class="w"> </span>database<span class="w"> </span>create<span class="w"> </span>&lt;database&gt;<span class="w"> </span>--command&lt;build&gt;<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>--db-cluster<span class="w"> </span>--language<span class="o">=</span>&lt;language-identifier&gt;,&lt;language-identifier&gt;
+</code></pre></div></li>
+<li>If you use a containerized build, you need to run the CodeQL CLI inside the container where you build task takes place.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>CodeQL and matrix:</p>
+<ul>
+<li>Recommended by GitHub due to the performance benefits of parallelizing builds:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>jobs:
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  analyze:
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    name: Analyze
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    ...
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    strategy:
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>      fail-fast: false
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>      matrix:
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>        language: [&#39;javascript&#39;, &#39;python&#39;]
+</code></pre></div></li>
+<li>If workflow doesn't contain a matrix called <code>language</code>, then CodeQL will run analysis sequentially. </li>
+<li>If languages are not specified in the workflow, CodeQL detects and attempts to analyze any supported languages in the repository.</li>
+<li>In order to analyze specific languages without using a matrix, tou can use the languages parameter under the <code>init</code> action:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>- uses: github/codeql-action/init@v1
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  with:
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    languages: cpp, csharp, python
+</code></pre></div></li>
+<li>If the C/C++, C#, or Java code in your repository has a non-standard build process, autobuild may fail. You will need to remove the <code>autobuild</code> step from the workflow, and manually add build steps.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>- if: matrix.language == &#39;cpp&#39; || matrix.language == &#39;csharp&#39;
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  name: Autobuild
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  uses: github/codeql-action/autobuild@v1
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>- if: matrix.language == &#39;java&#39;
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>  name: Build Java
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>  run: |
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    make bootstrap
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    make release
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+    
+  </body>
+</html>

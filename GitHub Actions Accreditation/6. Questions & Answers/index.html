@@ -1,0 +1,1985 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../1.%20Introduction/1-Introduction-to-GitHub-Actions/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>Questions & Answers - MyDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#questions-answers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MyDocs" class="md-header__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MyDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Questions & Answers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MyDocs" class="md-nav__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MyDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          GitHub Actions Accreditation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          GitHub Actions Accreditation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Questions & Answers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Questions & Answers
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github-actions-structure-and-architecture" class="md-nav__link">
+    GitHub Actions structure and architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets-and-variables" class="md-nav__link">
+    Secrets and Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching-artifacts-github-packages-and-releases" class="md-nav__link">
+    Caching, Artifacts, GitHub Packages and Releases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-templates" class="md-nav__link">
+    Workflow templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-actions-and-control-over-enterprise-organisation-and-repository-level" class="md-nav__link">
+    Deploying actions and control over enterprise, organisation and repository level
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#good-to-know" class="md-nav__link">
+    Good to know
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          1. Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          1. Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20Introduction/1-Introduction-to-GitHub-Actions/" class="md-nav__link">
+        Introduction to Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20Introduction/2-About-GitHub-Actions/" class="md-nav__link">
+        About Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20Introduction/3-GitHub-Actions-Workflow/" class="md-nav__link">
+        GitHub Actions CI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          2. GitHub Actions Syntax
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2. GitHub Actions Syntax
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20GitHub%20Actions%20Syntax/1.%20Versioning%2C%20Matrix%20and%20Automation/" class="md-nav__link">
+        1. Versioning, Matrix and Automation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20GitHub%20Actions%20Syntax/2.%20Conditional-statement/" class="md-nav__link">
+        2. Conditional statement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20GitHub%20Actions%20Syntax/3.%20Variables/" class="md-nav__link">
+        3. Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20GitHub%20Actions%20Syntax/4.%20Events/" class="md-nav__link">
+        4. Events
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20GitHub%20Actions%20Syntax/5.%20Keywords/" class="md-nav__link">
+        5. Keywords
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20GitHub%20Actions%20Syntax/6.%20Cache%20and%20Artifacts/" class="md-nav__link">
+        6. Using Cache and Artifacts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20GitHub%20Actions%20Syntax/7.%20Debugging/" class="md-nav__link">
+        7. Debugging
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          3. Package Registries and Custom Actions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          3. Package Registries and Custom Actions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Package%20Registries%20and%20Custom%20Actions/1.%20Package%20Registries/" class="md-nav__link">
+        GitHub Package Registries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Package%20Registries%20and%20Custom%20Actions/2.%20GitHub%20Packages%20for%20code%20packages/" class="md-nav__link">
+        GitHub Packages for code packages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Package%20Registries%20and%20Custom%20Actions/3.%20Publish%20custom%20actions/" class="md-nav__link">
+        Publish a custom GitHub action
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          4. Continuos Delivery
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          4. Continuos Delivery
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20Continuos%20Delivery/1.%20GitHub%20Secrets/" class="md-nav__link">
+        Storing credentials with GitHub Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20Continuos%20Delivery/2.%20Deploying%20to%20Microsoft%20Azure/" class="md-nav__link">
+        Deploying to Microsoft Azure using GitHub Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20Continuos%20Delivery/3.%20Create%20and%20delete%20Azure%20resources/" class="md-nav__link">
+        Create and delete Azure resources by using GitHub Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20Continuos%20Delivery/4.%20Remove%20artifacts%2C%20create%20status%20badges%2C%20and%20configure%20environment%20protections/" class="md-nav__link">
+        Remove artifacts, create status badges, and configure environment protections
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          5. GitHub Enterprise and Usage Limits
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          5. GitHub Enterprise and Usage Limits
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%20GitHub%20Enterprise%20and%20Usage%20Limits/1.%20Actions%20and%20Workflows/" class="md-nav__link">
+        Action and Workflows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%20GitHub%20Enterprise%20and%20Usage%20Limits/2.%20Runners/" class="md-nav__link">
+        Manage Runners
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%20GitHub%20Enterprise%20and%20Usage%20Limits/3.%20Encrypted%20Secrets/" class="md-nav__link">
+        Manage encrypted secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%20GitHub%20Enterprise%20and%20Usage%20Limits/4.%20GitHub%20Usage%20Limits/" class="md-nav__link">
+        Usage limits
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          GitHub Advanced Security Accreditation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          GitHub Advanced Security Accreditation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/1.%20Introduction/" class="md-nav__link">
+        1. Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/2.%20Configure%20Dependabot%20Security%20updates%20on%20your%20GitHub%20repo/" class="md-nav__link">
+        2. Configure Dependabot Security updates on your GitHub repo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/3.%20Configure%20and%20use%20secret%20scanning%20in%20GitHub%20repository/" class="md-nav__link">
+        3. Configure and use secret scanning in GitHub repository
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/4.%20Configure%20code%20scanning%20on%20GitHub/" class="md-nav__link">
+        4. Configure code scanning on GitHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/5.%20Code%20Scanning%20with%20GitHub%20CodeQL/" class="md-nav__link">
+        5. Code Scanning with GitHub CodeQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/6.%20Identify%20security%20vulnerabilities%20in%20your%20codebase%20with%20CodeQL/" class="md-nav__link">
+        6. Identify security vulnerabilities in your codebase with CodeQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/7.%20GitHub%20administration%20for%20GitHub%20Advanced%20Security%20/" class="md-nav__link">
+        7. GitHub administration for GitHub Advanced Security 
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/8.%20Manage%20sensitive%20data%20and%20security%20policies%20within%20GitHub/" class="md-nav__link">
+        8. Manage sensitive data and security policies within GitHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/9.%20Required%20permissions/" class="md-nav__link">
+        9. Required permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/Question%20%26%20Answers/" class="md-nav__link">
+        Question & Answers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+          Instructions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_11">
+          <span class="md-nav__icon md-icon"></span>
+          Instructions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/Instructions/Code%20Scanning/" class="md-nav__link">
+        Code Scanning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/Instructions/Dependabot/" class="md-nav__link">
+        Dependabot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/Instructions/GraphQL/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GitHub%20Advanced%20Security%20Accreditation/Instructions/Secret%20Scanning/" class="md-nav__link">
+        Secret Scanning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github-actions-structure-and-architecture" class="md-nav__link">
+    GitHub Actions structure and architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets-and-variables" class="md-nav__link">
+    Secrets and Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching-artifacts-github-packages-and-releases" class="md-nav__link">
+    Caching, Artifacts, GitHub Packages and Releases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-templates" class="md-nav__link">
+    Workflow templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-actions-and-control-over-enterprise-organisation-and-repository-level" class="md-nav__link">
+    Deploying actions and control over enterprise, organisation and repository level
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#good-to-know" class="md-nav__link">
+    Good to know
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="questions-answers">Questions &amp; Answers</h1>
+<h3 id="github-actions-structure-and-architecture">GitHub Actions structure and architecture</h3>
+<ol>
+<li>
+<p>What is a GitHub Actions Structure?</p>
+<ul>
+<li>To create a workflow, you add actions to a .yml file in the .github/workflows directory in your GitHub repository.</li>
+<li>
+<p><b>Workflow -&gt; Job -&gt; Step -&gt; Action.</b> </br>Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Workflow
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>name: A name for workflow
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>on: push
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a># Job    
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>jobs:
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  build:
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    name: name for build action
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    # Step
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    steps:
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>      # Action
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>      - uses: actions/checkout@v1
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>      - uses: ./action-a
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>      with:
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        MY_NAME: &#39;Evgenii&#39;
+</code></pre></div></p>
+</li>
+<li>
+<p><code>Note</code>: <b> An event triggers the workflow, which contains the job. The job contains the steps. The steps contain the actions. </b></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Generate an anatomy of GitHub Actions: JavaScript, Docker and composite run step actions:</p>
+<ul>
+<li>
+<p>JavaScript action
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>steps:
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- uses: actions/checkout@v1
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>- name: npm install and build webpack
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  run: |
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    npm install
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    npm run build
+</code></pre></div></p>
+</li>
+<li>
+<p>Docker action
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>name: &quot;Hello Actions&quot;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>description: &quot;Greet someone&quot;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>author: &quot;octocat@github.com&quot;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>inputs:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  MY_NAME:
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    description: &quot;Who to greet&quot;
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    required: true
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    default: &quot;World&quot;
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>runs:
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  uses: &quot;docker&quot;
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  image: &quot;Dockerfile&quot;
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>branding:
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  icon: &quot;mic&quot;
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  color: &quot;purple&quot;
+</code></pre></div></p>
+</li>
+<li>
+<p>Composite run step action:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>name: &#39;Hello World&#39;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>description: &#39;Greet someone&#39;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>inputs:
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  who-to-greet:  # id of input
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    description: &#39;Who to greet&#39;
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    required: true
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    default: &#39;World&#39;
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>outputs:
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  random-number:
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    description: &quot;Random number&quot;
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    value: ${{ steps.random-number-generator.outputs.random-number }}
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>runs:
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  using: &quot;composite&quot; # using composite action
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>  steps:
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    - run: echo Hello ${{ inputs.who-to-greet }}.
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>      shell: bash
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    - id: random-number-generator
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>      run: echo &quot;random-number=$(echo $RANDOM)&quot; &gt;&gt; $GITHUB_OUTPUT
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>      shell: bash
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    - run: echo &quot;${{ github.action_path }}&quot; &gt;&gt; $GITHUB_PATH
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>      shell: bash
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    - run: goodbye.sh
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>      shell: bash
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+<li>
+<p>What are common workflow commands:</p>
+<ul>
+<li><code>name</code>: A name for the workflow.</li>
+<li><code>needs</code>: A workflow run must complete successfully before a dependent workflow run can begin.</li>
+<li><code>env</code>: Variable set in a workflow, job, or step.</li>
+<li><code>vars</code>: Variable set at the repository, organization, or environment levels.</li>
+<li><code>secrets</code>: the names and values of secrets that are available to a workflow run.</li>
+<li><code>strategy</code>: A strategy for matrix builds.</li>
+<li><code>matrix</code>: matrix properties defined in the workflow that apply to the job.</li>
+<li><code>inputs</code>: inputs of a reusable or manually triggered workflow.</li>
+<li>
+<p><code>on:</code> attribute is a trigger to specify when the workflow will run. In example above workflow executes on <code>push</code>event. </p>
+<ul>
+<li>Ways to use <code>on:</code> attribute:<ol>
+<li>using single event <code>on: push</code></li>
+<li>using multiple events: <code>on: [push, pull_request]</code></li>
+<li>Using activity types: 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>on: 
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  issues: 
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    types: 
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>      - opened
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>      - labeled
+</code></pre></div></li>
+<li>Using activity types and filters with multiple events:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>on:
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  label:
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    types:
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>      - created
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  push:
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    branches:
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>      - main
+</code></pre></div></li>
+</ol>
+</li>
+<li>Also it is important to remember:<ul>
+<li><code>workflow_dispatch</code>: allows to trigger a workflow manually from the GitHub Actions UI.</li>
+<li><code>repository_dispatch</code>: allows to trigger a workflow using GitHub API.<ul>
+<li>This event requires two things: 1) POST request to a propriate endpoint, 2) configuring workflow to use repository_dispatch event. Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>on:
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  repository_dispatch:
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    types: [opened, deleted]
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Lastly it is possible to confugure a workflow to run on schedule or a specific webhook events.</p>
+<ul>
+<li>The <code>schedule</code> event allows to trigger a workflow to run at specific <code>UTC</code> times using <code>POSIX</code> cron syntax. Example: 
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>on:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  schedule:
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    - cron:  &#39;0 3 * * SUN&#39;
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>The <code>webhook</code> event allows to trigger a workflow when a specific webhook event is received. </p>
+</li>
+<li>In the example below a workflow is using <code>check_run</code> event for the <code>rerequested</code> or requested_action` activity types.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>on:
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  check_run:
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    types: [rerequested, requested_action]
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>What files are needed for a Javascript action and a Docker action?</p>
+<ul>
+<li>JavaScript actions needs following files:<ul>
+<li><code>action.yml</code></li>
+<li><code>index.js</code></li>
+<li><code>node_modules</code></li>
+<li><code>package.json</code></li>
+<li><code>package-lock.json</code></li>
+<li><code>README.md</code></li>
+</ul>
+</li>
+<li>Docker actions needs following files:<ul>
+<li><code>action.yml</code></li>
+<li><code>Dockerfile</code></li>
+<li><code>entrypoint.sh</code></li>
+<li><code>README.md</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What is a required and optional syntax for workflow files and action files.</p>
+<ul>
+<li>The syntax for workflow files and action files in GitHub Actions is YAML. YAML is a human-readable data serialization language that is often used for configuration files and data exchange formats. The required metadata and syntax in order to create an action are: 1) <code>Name</code> 2) <code>Description</code> 3) <code>Runs</code>, on the other hand optional parameters are 1) <code>Inputs</code>, 2) <code>Outputs</code>, and 6) <code>Branding</code>.</li>
+</ul>
+</li>
+<li>
+<p>What are the ways to refer to an action?</p>
+<ul>
+<li>There are different ways to refer to an action:<ol>
+<li>Referencing by a specific commit. <code>- uses: actions/setup-node@c46424eee26de4078d34105d3de3cc4992202b1e</code></li>
+<li>Refercing by the version of a release. <code>- uses: actions/setup-node@v1</code> or <code>- uses: actions/setup-node@v1.2</code></li>
+<li>Refernsing by a branch. <code>- uses: actions/setup-node@main</code></li>
+<li>Referencing by a tag. <code>- uses: actions/javascript-action@v1-beta</code></li>
+</ol>
+</li>
+<li>To effectively manage the releases and versions of software, it is recommended to create a separate branch for releases and test the release on that branch before creating a release tag.</li>
+</ul>
+</li>
+<li>
+<p>What are all the actions GitHub uses during it's collection?</p>
+<ol>
+<li><code>actions/checkout@v2</code> - Checks out a repository into the GitHub Actions runner.</li>
+<li><code>actions/cache@v2</code> - Caches dependencies and build outputs to improve workflow execution time.</li>
+<li><code>actions/upload-artifact@v2</code> - Uploads an artifact.</li>
+<li><code>actions/download-artifact@v2</code> - Downloads a single artifact.</li>
+<li><code>actions/setup-node@v1</code> - Sets up a Node.js environment for use in actions by:<ul>
+<li>optionally downloading and caching a version of Node.js by version and adding to PATH.</li>
+<li>registering problem matchers for error output.</li>
+</ul>
+</li>
+<li><code>azure/webapps-container-deploy@v1</code></li>
+<li><code>azure/login@v1</code></li>
+<li><code>azure/docker-login@v1</code></li>
+</ol>
+</li>
+<li>
+<p>What are all the possible options for GitHub conditionals?</p>
+<ul>
+<li>In order to use conditionals in workflow, it requires two main attributes:<ul>
+<li><code>if</code>: The conditional expression that determines whether the step runs. </li>
+<li><code>conditionion</code> itself using specifix syntax <code>${{ &lt;expression&gt; }}</code>.</li>
+</ul>
+</li>
+<li>GitHub offers conditionals using a keyword like: 1) <code>contains()</code>, 2) <code>startsWith()</code>, 3) <code>endsWith()</code> and more. <a href="https://docs.github.com/en/actions/learn-github-actions/expressions">Full list of keywords</a></li>
+<li>Using <code>github.&lt;condition&gt;</code> or <code>steps.&lt;condition&gt;</code> for example <code>github.event_name == 'push'</code></li>
+<li>When it comes to variables, contitional keyword can be used only within the context variables or predefined workflow variables inside the <code>env: attribute</code>!</li>
+<li>the <code>success()</code> function returns true if the step or job has succeeded.</li>
+<li>Using labels:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>jobs:
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>set-up-azure-resources:
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  runs-on: ubuntu-latest
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  if: contains(github.event.pull_request.labels.*.name, &#39;spin up environment&#39;)
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  ...
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>destroy-azure-resources:
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  runs-on: ubuntu-latest
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  if: contains(github.event.pull_request.labels.*.name, &#39;destroy environment&#39;)
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>  ...
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>What matrix strategy is used for?</p>
+<ul>
+<li><code>matrix</code> strategy is used to run tests in parallel against different system architectures and its versions. </li>
+<li>For example in the example below, the <code>matrix</code> strategy been configured to produce 4 builds, one for each combination of <code>os</code> and <code>node-version</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>strategy:
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  matrix:
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>      os: [ubuntu-lastest, windows-2016]
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>      node-version: [8.x, 10.x]
+</code></pre></div></li>
+<li>Other example, including github objects:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>name: Node.js CI
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>on:
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>  push:
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    branches: [ main ]
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>  pull_request:
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    branches: [ main ]
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>jobs:
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>  build:
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    strategy:
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>      matrix:
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>        os: [ubuntu-lastest, windows-2016]
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>        node-version: [10.x, 12.x]
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>    steps:
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>    - uses: actions/checkout@v2
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>    - name: Use Node.js ${{ matrix.node-version }}
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>      uses: actions/setup-node@v1
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>      with:
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>        node-version: ${{ matrix.node-version }}
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>    - run: npm ci
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>    - run: npm run build --if-present
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>  test:
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>    needs: build
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>    strategy:
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>      matrix:
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>        os: [ubuntu-lastest, windows-2016]
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>        node-version: [10.x, 12.x]
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>    steps:
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>    - uses: actions/checkout@v1
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>    - name: Use Node.js ${{ matrix.node-version }}
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>      uses: actions/setup-node@v1
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>      with:
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>        node-version: ${{ matrix.node-version }}
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>    - name: npm install, and tet
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>      run: |
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>        npm install
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>        npm test
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>      env:
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>        CI: true
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>What are the useful workflow commands?</p>
+<ul>
+<li><code>echo "::workflow-command parameter1={data},parameter2={data}::{command value}"</code></li>
+<li><code>echo "::error file=app.js,line=10,col=15::Something went wrong"</code></li>
+<li>command should be on a single line, in order to break the line, required to specify URL-encoded line feed character <code>%0A</code></li>
+<li>Depends on language, the syntax can be different. For example when using <code>JavaScript</code> syntax could be following: <code>core.setOutput('SELECTED_COLOR', 'green');</code></li>
+<li>Workflow command and parameter names are not case-sensitive.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>  - name: workflow commands logging messages
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  run: |
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    echo &quot;::debug::This is a debug message&quot;
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    echo &quot;This is an info message&quot;
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    echo &quot;::error::This is an error message&quot;
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    echo &quot;::warning::This is a warning message&quot;
+</code></pre></div>
+- in order to set the output within the action, the syntax could be:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>  - name: Set color
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    id: random-color-generator
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    run: echo &quot;SELECTED_COLOR=green&quot; &gt;&gt; $GITHUB_OUTPUT
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  - name: Get color
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    run: echo &quot;The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}&quot;
+</code></pre></div>
+</li>
+<li>
+<p>How to automate reviews in GitHub using workflows?</p>
+<ul>
+<li>In order to run a workflow after a reviewer has approved the pull request, the trigger could be <code>pull-request-review</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>steps:
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a> - name: Label when approved
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>   uses: pullreminders/label-when-approved-action@main
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>   env:
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>     APPROVALS: &quot;1&quot;
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>     ADD_LABEL: &quot;approved&quot;
+</code></pre></div>
+</li>
+</ol>
+<p></br></p>
+<h3 id="secrets-and-variables">Secrets and Variables</h3>
+<ol>
+<li>
+<p>What <code>GITHUB_TOKEN</code> is used for?</p>
+<ul>
+<li>Authenticating and authorizing actions to interact with the repository, such as: checking out the code, pushing changes, creating pull requests, creating issues, commenting on pull requests, or updating project boards.</li>
+</ul>
+</li>
+<li>
+<p>Describe variables in GitHub Actions:</p>
+<ul>
+<li>In GitHub users are available to use default envionment variables, context variables and custom environment variables: </li>
+<li>Default environment variables and context variables are similar to each other, however context can be used within the <code>if</code> attribute as a conditional expression.</li>
+<li>Custom variables can be defined in the <code>env:</code> attribute of the workflow file. Example: 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>name: CI
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>on: push
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>jobs:
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>  prod-check:
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    if: github.ref == &#39;refs/heads/main&#39;
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    steps:
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>      - run: echo &quot;Nice work, $First_Name. Deploying to production server on branch $GITHUB_REF&quot;
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>        env:
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>          First_Name: Evgenii
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Which environment variable gives info on which branch and which user initiated a workflow run?</p>
+<ul>
+<li><code>$GITHUB_ACTOR</code> provides the username of the user or the name of the GitHub App that initiated the workflow run.</li>
+<li><code>$GITHUB_REF</code> provides the Git reference (e.g. branch or tag) that triggered the workflow run.</li>
+<li><code>$GITHUB_REPOSITORY</code> provides the owner and repository name. For example, <code>octocat/Hello-World</code>.</li>
+<li>To use a default environment variable, <code>$</code> is required followed by the environment variable's name. For example:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>jobs:
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>prod-check:
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>  steps:
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    - run: echo &quot;Deploying to production server on branch $GITHUB_REF&quot;
+</code></pre></div>
+</li>
+<li>
+<p>How to use secret in a an action?</p>
+<ul>
+<li>GitHub secrets can be configured at <code>Organization</code> and <code>Repository levels</code>.</li>
+<li>For <code>Repository</code> level, secrets used <code>ONLY</code> within the repository and doesn't have <code>repository access</code> policy permissions.</li>
+<li>For <code>Organisation</code> level, secrets has a configurable <code>policy</code> permissions: <code>Repository access</code>. These secrets can be used all around the organisation from a single place.</li>
+<li>
+<p>Where are few approaches of using secrets, and they depends on the level and usecase scenario. The example shows all the possible options:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>steps:
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  - name: &quot;Login via Azure CLI&quot; 
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    uses: azure/login@v1
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    with: # Using repository level secret as an input for the action
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>      creds: ${{ secrets.AZURE_CREDENTIALS }} 
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    # or
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    with: # Set the super secret as an input for the action
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>      super_secret: ${{ secrets.AZURE_CREDENTIALS }}
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>    env: # Set the secret as an environment variable
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>      super_secret: ${{ secrets.AZURE_CREDENTIALS }}
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>    inputs: # Set the encrypted secret as an input for the action 
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>      super_secret:
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>        description: &#39;A super secret&#39;
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>        required: true
+</code></pre></div>
+</li>
+<li>
+<p>When secret is created, an action can only get the secrets as <code>input</code>. In this case the action code could read the value of the input using the <code>INPUT_SUPER_SECRET</code> environment variable.</p>
+</li>
+<li>Interesting: No configuration for enterprise level using <code>super_secret</code>?</li>
+</ul>
+</li>
+</ol>
+<p></br></p>
+<h3 id="caching-artifacts-github-packages-and-releases">Caching, Artifacts, GitHub Packages and Releases</h3>
+<ol>
+<li>
+<p>What is a difference between using artefacts and cache?</p>
+<ul>
+<li>GitHub provides two ways to reuse dependencies between workflow runs: <code>caching</code> and <code>artifacts</code>. </li>
+<li><code>Caching</code> allows to persist files generated <code>during</code> the workflow run, such as dependencies or build outputs, and is useful for reducing the time it takes to install dependencies in subsequent runs. </li>
+<li><code>Artifacts</code> are files or directories that should be persisted <code>after</code> the workflow run has completed, and are used for <code>sharing</code> files between different jobs or for downloading and storing build artifacts for deployment. </li>
+<li>The main difference between <code>caching</code> and <code>artifacts</code> is that caching is focused on improving performance during the workflow run, while artifacts are focused on sharing files between jobs and workflows after the workflow run has completed. </li>
+<li>By default, <code>cache</code> is accessible for 7 days, however the retention period can be changed.</li>
+<li>Size of all caches in a repository is limited to 10 GB.</li>
+<li>To use cache, it requires to set <code>Key</code> (Refers to the key identifier created when saving and searching for a cache.) and <code>Path</code> (Refers to the file path on the runner to cache or search.) Restore-keys is optional, it constists of alternative existing keys to caches if the desired cache key is not found.</li>
+<li>By default <code>artifacts</code> are accessible for 90 days after a workflow run has completed, however the retention period can be changed:</li>
+<li>For <code>public</code> repositories: anywhere between 1 day or 90 days.</li>
+<li>For <code>private</code> repositories: anywhere between 1 day or 400 days.</li>
+<li><a href="https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#comparing-artifacts-and-dependency-caching">here</a> GitHub tells themself: </br> <ul>
+<li>Use caching when you want to reuse files that don't change often between jobs or workflow runs, such as build dependencies from a package management system.</li>
+<li>Use artifacts when you want to save files produced by a job to view after a workflow run has ended, such as built binaries or build logs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What parameters <code>caching</code> requires and what are optional parameters?</p>
+<ul>
+<li><code>Key</code> and <code>Path</code> are required parameters, while <code>Restore-keys</code> is optional.</li>
+<li>An example of using <code>caching</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>steps:
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>  - uses: actions/checkout@v2
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>  - name: Cache NPM dependencies
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    uses: actions/cache@v2
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    with: 
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>      path: ~/.npm
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>      key: ${{ runner.os }}-npm-cahe-${{ hashFiles(&#39;**/package-lock.json&#39;) }}
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>      restore-keys: |
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>        ${{ runner.os }}-npm-cache-
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>How to pass artifact data between jobs?</p>
+<ul>
+<li>In order to pass artifact data between jobs, it is required to use <code>upload-artifact</code> and <code>download-artifact</code> actions.</li>
+<li>Example of passing artifacts between jobs:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>name: Share data between jobs
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>on: push
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>jobs:
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>  job_1:
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    name: Upload File
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    steps:
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>      - run: echo &quot;Hello World&quot; &gt; file.txt
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>      - uses: actions/upload-artifact@v2
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>        with:
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>          name: file
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>          path: file.txt
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>  job_2:
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>    name: Download File
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>    needs: job_1
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    steps:
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>      - uses: actions/download-artifact@v2
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>        with:
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>          name: file
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>      - run: cat file.txt
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>What are the Packages GitHub supports in its Package tool?</p>
+<ul>
+<li>GitHub Packages is compatible with common package-management client. GitHub Packages supports: <ul>
+<li><code>npm</code></li>
+<li><code>NuGet</code></li>
+<li><code>Maven</code> and <code>Gradle</code></li>
+<li><code>RubyGems</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What is the end point to access logs from the REST API?</p>
+<ul>
+<li>The endpoint to access logs from the REST API is: <code>https://api.github.com/repos/{owner}/{repo}/actions/runs/{run_id}/logs</code></li>
+</ul>
+</li>
+<li>
+<p>GitHub Packages is a package-management service, however what else it is?</p>
+<ul>
+<li>GitHub Packages is also a container registry. It allows to <code>store</code>, <code>manage</code>, and <code>deploy</code> container images and it is compatible with Docker, Kubernetes and other cloud-native technologies. </li>
+</ul>
+</li>
+<li>
+<p>What is the difference between GitHub Packages and Releases</p>
+<ul>
+<li>GitHub Packages are used to publish and release libraries to a standard package feed or a container registry.</li>
+<li>GitHub Releases are used to release a bundle of packaged software, along with the release notes and links to binary files. It is basically a wrap of repository files in tarball or zip format. Releases can be directly downloaded from their unique URL and tracked back to specific commit they were created from.</li>
+</ul>
+</li>
+<li>
+<p>What is a workflow to publish to GitHub Packages?</p>
+<ul>
+<li>
+<p>The workflow below must exists in the <code>./github/workflows</code> directory. 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>name: Node.js Package
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>on:
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>  release:
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    types: [created]
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>jobs:
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>  build:
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>    steps:
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>      - uses: actions/checkout@v2
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>      - uses: actions/setup-node@v1
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>        with:
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>          node-version: 12
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>      - run: npm ci
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>      - run: npm test
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>  publish-gpr:
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>    needs: build
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>    steps:
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>      - uses: actions/checkout@v2
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>      - uses: actions/setup-node@v1
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>        with:
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>          node-version: 12
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>          registry-url: https://npm.pkg.github.com/
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>      - run: npm ci
+<a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a>      - run: npm publish
+<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a>        env:
+<a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a>          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+</code></pre></div></p>
+</li>
+<li>
+<p>A workflow above does following:</p>
+<ul>
+<li>After build succeedes, <code>publish-gpr</code> runs <code>npm publish</code> to publish the package to the <code>GitHub Package Registry</code>.</li>
+<li>A job named <code>build</code> runs <code>npm ci</code> to install dependencies directly from the <code>package-lock.json</code> file.</li>
+<li>The workflow publishes the package to the <code>registry-url: https://npm.pkg.github.com/</code> and uses the <code>GITHUB_TOKEN</code> secret to authenticate.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>How to use GitHub Container Registry to host and manage Docker container images?</p>
+<ul>
+<li>GitHub Container Registry allows you to configure who can manage and access packages using fine-grained permissions.</li>
+<li>After image is built, and user is signed in to GitHub Container Registry at <code>ghcr.io</code>, user can tag and push the latest version of the image to container registry using these commands:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$GITHUB_TOKEN</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span>login<span class="w"> </span>ghcr.io<span class="w"> </span>-u<span class="w"> </span>USERNAME<span class="w"> </span>--password-stdin
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>docker<span class="w"> </span>tag<span class="w"> </span>IMAGE_ID<span class="w"> </span>ghcr.io/OWNER/IMAGE_NAME:latest
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>docker<span class="w"> </span>push<span class="w"> </span>ghcr.io/OWNER/IMAGE_NAME:latest
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>What are all the pieces of information users need in order to authenticate to GitHub package manager?</p>
+<ul>
+<li>Personal GitHub username</li>
+<li>Personal Access Token</li>
+<li>GitHub Package endpoint for package ecosystem</li>
+</ul>
+</li>
+<li>
+<p>What are the possible endpoints for GitHub Packages?</p>
+<ul>
+<li>The basic endpoint for GitHub Packages is <code>https://PACKAGE_TYPE.pkg.github.com/OWNER/REPOSITORY</code></li>
+<li>So basically if we have a package type of <code>npm</code>, owner of <code>octocat</code> and repository of <code>hello-world</code>, the endpoint   would be <code>https://npm.pkg.github.com/octocat/hello-world</code></li>
+</ul>
+</li>
+<li>
+<p>There are 4 package ecosystems GitHub refers during the GitHub Actions collections. What is the way to authenticate in each of them?</p>
+<ol>
+<li><code>NuGet</code>: <code>dotnet nuget add source https://nuget.pkg.github.com/OWNER/index.json -n github -u OWNER -p [Your PAT Token]</code></li>
+<li><code>npm</code>: <code>bash npm login --registry=https://npm.pkg.github.com</code></li>
+<li><code>RubyGems</code>: <code>echo ":github: Bearer GH_TOKEN" &gt;&gt; ~/.gem/credentials</code></li>
+<li><code>Maven</code> &amp; <code>Grandle</code>: Can be directly authenticated while pushing</li>
+</ol>
+</li>
+<li>
+<p>What are the ways of managing packages?</p>
+<ul>
+<li>GitHub Packages offers several ways to manage packages:  <ul>
+<li>Using GitHub API or GraphQL API</li>
+<li>GitHub Actions</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p></br></p>
+<h3 id="workflow-templates">Workflow templates</h3>
+<ol>
+<li>
+<p>When GitHub recommends to store actions and workflow templates LOCALLY?</p>
+<ul>
+<li>GitHub recommends storing actions and workflow templates locally when its needed to reuse the same actions or workflows across multiple repositories or to maintain version control over actions and workflows.</li>
+<li>By storing actions and workflows locally, user can define them in a central location and reference them in multiple repositories, instead of duplicating the same actions and workflows across multiple repositories. This can help you maintain consistency and avoid errors or inconsistencies across your repositories.</li>
+<li>When you store actions and workflows locally, you can also version control them using Git, just like you would with any other code. This means you can track changes to your actions and workflows over time, collaborate with others on updates and improvements, and easily roll back to previous versions if needed.</li>
+</ul>
+</li>
+<li>
+<p>Where templated workflows should be stored?</p>
+<ul>
+<li>By default GitHub templates should be stored in <code>.github/workflows</code> directory.<ul>
+<li>Organisation templates should be stored in organisation's <code>.github</code> repository. Templates can be found by using <code>Actions</code>, selecting <code>New workflow</code> and finding the organisation's workflow template section titled <code>Worfklows created by &lt;organisation name&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p></br></p>
+<h3 id="deploying-actions-and-control-over-enterprise-organisation-and-repository-level">Deploying actions and control over enterprise, organisation and repository level</h3>
+<ol>
+<li>
+<p>What are all the steps required in order to create / publish an action?</p>
+<ul>
+<li>Depends on the visibility <code>public</code> or <code>private</code>. </li>
+<li>
+<p>Public actions need their own repository for:</p>
+<ul>
+<li><code>versioning</code></li>
+<li><code>tracking</code></li>
+<li><code>discoverability</code></li>
+</ul>
+</li>
+<li>
+<p>Private actions can be stored in any location in the same repository.</p>
+</li>
+<li>
+<p>Regardless of visibility, it's a good practice to include documentation as a README.md file, covering the action's:</p>
+<ul>
+<li><code>description</code></li>
+<li><code>required &amp; optional</code> arguments</li>
+<li><code>input &amp; output arguments</code></li>
+<li><code>secrets</code> (e.g. how they should be used and what they are used for)</li>
+<li><code>environment variables used</code> and an example of how to use it</li>
+<li>The README.md should provide all the information a user needs to use the action.</li>
+</ul>
+</li>
+<li>
+<p>In order to publish action to <code>GitHub Marketplace</code>:</p>
+<ul>
+<li>GitHub has requirement list, an of all of the requirements are met, GitHub publishes an action immediately to the GitHub Marketplace. </li>
+<li>Else, GitHub will need to review an action.</li>
+<li>
+<p>The repository for the action should only include: </p>
+<ul>
+<li><code>metadata file code</code> </li>
+<li>files necessary for the action.</li>
+</ul>
+</li>
+<li>
+<p>The action must be in a <code>public</code> repository and must contain a <code>single</code> action.</p>
+</li>
+<li>
+<p>The action's metadata file <code>action.yml</code> must be in the root directory of the repository. </p>
+<ul>
+<li><code>name</code> in the metadata file must be <code>unique</code> on the GitHub Marketplace.</li>
+<li><code>name</code> cannot match a user or organization on GitHub, unless the user or organization owner is publishing the action. </li>
+<li><code>name</code> cannot match an existing GitHub Marketplace category or feature.</li>
+</ul>
+</li>
+<li>
+<p>Action can be added to <code>GitHub Marketplace</code> by tagging it as a new release and then publishing it.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>How to debug a self-hosted runner?</p>
+<ul>
+<li>There are few ways:<ul>
+<li>Enable runner diagnostics logging. Set the <code>ACTIONS_RUNNER_DEBUG</code> secret in the repository that contains the workflow to <code>true</code></li>
+<li>Enable step diagnostics logging. Set the <code>ACTIONS_STEP_DEBUG</code> secret in the repository that contains the workflow to <code>true</code></li>
+<li>GitHub-hosted runners are not supported on GitHub Enterprise Server. However GitHub Enterprise Cloud supports both: GitHub-hosted and self-hosted runners.</li>
+<li>Users also can:<ul>
+<li>Check the status of the runner in GitHub Actions settings of the organisation, repository or entreprise where self-hosted runner is registered.</li>
+<li>Review the activities and automatic updates of the runner in the <code>Runner_</code> files in the <code>_diag</code> folder</li>
+<li>Review the status of the jobs runner executed in the <code>Worker_</code> files in the <code>_diag</code> folder  </li>
+<li>Depending on the operation system of the runner, users can also review:<ul>
+<li><code>MacOS</code>: self-hosted runner application service using <code>launchd</code></li>
+<li><code>Windows</code>: self-hosted runner application service using <code>PowerShell</code></li>
+<li><code>Linux</code>:  self-hosted runner application service using <code>journalctl</code> or if jobs require containers, confirm that Docker is configured correctly, installed and running using <code>systemctl</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>How to protect workflow environment?</p>
+<ul>
+<li>
+<p>It make sense to configure workflow envirnment with protection rules and secrets. With the protection a job won't start or access any defined secrets in the environment untill all of the environment's protection rules pass. For now protection rules and environment secrets only apply to public repositories.</p>
+</li>
+<li>
+<p>There are two environment protection rules that are possible to apply to workflows within <code>public repositories</code>, <code>required reviewers</code> and <code>wait timer</code>:</p>
+</li>
+<li>
+<p>Required reviewers allows to set a specific person or team to approve workflow jobs that reference the job's environment.</p>
+</li>
+<li>Wait timer can be used to <code>delay</code> a job for a specific amount of time after the job has been <code>triggered</code>.</li>
+<li>
+<p>For example if it's necessary to create a workflow to a production environment that a <code>dev</code> team needs to approve before the deployement occurs, the steps would look be:</p>
+<ol>
+<li>Create a <code>production environment</code> within the repository</li>
+<li>Configure the required reviewers environment protection to require an approval from the specific <code>dev</code> team</li>
+<li>Configure the specific job within the workflow for the <code>production</code> environment</li>
+</ol>
+</li>
+<li>
+<p>The repository can be created and configured from the repository's <code>Settings</code> tab under <code>Environments</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Everything related to GitHub enterprise/organisation level:</p>
+<ul>
+<li>In both levels GitHub Actions use policy can be configured.</li>
+<li>Most official GitHub-authored actions come automatically bundled with Enterprise Server, and are captured at a point in time from the GitHub Marketplace:</li>
+<li><code>actions/checkout</code></li>
+<li><code>actions/upload-artifact</code></li>
+<li><code>actions/download-artifact</code></li>
+<li><code>actions/labeler</code></li>
+<li><code>actions/setup-...</code></li>
+<li>Workflow templates can be created in both: Enterprise Cloud and Server. Users with write access can create templates to an organization's <code>.github</code> repository. Templates can be stored in <code>public</code> or <code>private</code> repositories of the organisation.</li>
+<li>In order to create a template user needs: <code>.yml</code> file, and metadata file <code>.properties.json</code> file. Metadata file requires <code>name</code>, <code>description</code> and <code>iconName</code> properties. <code>categories</code> and <code>filePatterns</code> are optional parameters.</li>
+<li><code>$default-branch</code> placeholder can be used within the <code>on:</code> trigger event inside <code>Workflow</code> section of the action file to reference the default branch of the repository.</li>
+</ul>
+</li>
+<li>
+<p>How proxy settings should be set for GitHub Enterprise?</p>
+<ul>
+<li>Proxy environmnet variables are read when the self-hosted runner application starts, so engineer must set the environment variables before configuring or starting the application. If proxy configuration changes, it requires to restart the self-hosted runner application.</li>
+<li>In Windows environment the proxy variable names are not case sensitive. On Linux and MacOS the recommended way is to specify all of the environment variable names in a lowercase. If there are environment variables in both uppercase and lowercase on Linux or macOS, for example <code>https_proxy</code> and <code>HTTPS_PROXY</code>, the self-hosted runner application will use the lowercase variable.</li>
+</ul>
+</li>
+<li>
+<p>What IP Allowlist should contain in order to communicate with self-hosted runners?</p>
+<ul>
+<li>IP allowlist should contain IP address or range of self-hosted runners for the communication between self-hosted runner and GitHub.</li>
+</ul>
+</li>
+</ol>
+<p></br></p>
+<h2 id="good-to-know">Good to know</h2>
+<ol>
+<li>
+<p>Each workflow run will use the version of the workflow that is present in the associated commit SHA or Git ref of the event. When a workflow runs, GitHub sets the <code>GITHUB_SHA</code> (commit SHA) and <code>GITHUB_REF</code> (Git ref) environment variables in the runner environment.</p>
+</li>
+<li>
+<p><code>check_run</code> is an activity event that activity relates to a check run occurs. It has different activity types: <code>created</code>, <code>rerequested</code>, <code>completed</code> and <code>requested_action</code>.</p>
+</li>
+<li>
+<p>GitHub refers that it is possible to connect Enterprise Server to Market place. However you cannot download apps from the Marketplace (AFAIK only actions are allowed to be downloaded from the Marketplace using GHES).</p>
+</li>
+<li>
+<p>self-hosted Labels:</p>
+<ul>
+<li>[self-hosted, <code>&lt;operating system&gt;</code>, <code>&lt;hardware architecture&gt;</code>]</li>
+<li>for example: <code>[self-hosted, linux, ARM64]</code></li>
+</ul>
+</li>
+<li>
+<p>Read carefully about usage limits! <a href="http://localhost:8000/GitHub%20Actions%20Accreditation/5.%20GitHub%20Enterprise%20and%20Usage%20Limits/4.%20GitHub%20Usage%20Limits/">Usage limits</a></p>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1334 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1.%20Actions%20and%20Workflows/">
+      
+      
+        <link rel="next" href="../3.%20Encrypted%20Secrets/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>Manage Runners - MyDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manage-runners" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MyDocs" class="md-header__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MyDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manage Runners
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MyDocs" class="md-nav__button md-logo" aria-label="MyDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MyDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          GitHub Actions Accreditation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          GitHub Actions Accreditation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.%20Questions%20%26%20Answers/" class="md-nav__link">
+        Questions & Answers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          1. Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          1. Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%20Introduction/1-Introduction-to-GitHub-Actions/" class="md-nav__link">
+        Introduction to Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%20Introduction/2-About-GitHub-Actions/" class="md-nav__link">
+        About Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%20Introduction/3-GitHub-Actions-Workflow/" class="md-nav__link">
+        GitHub Actions CI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          2. GitHub Actions Syntax
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          2. GitHub Actions Syntax
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%20GitHub%20Actions%20Syntax/1.%20Versioning%2C%20Matrix%20and%20Automation/" class="md-nav__link">
+        1. Versioning, Matrix and Automation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%20GitHub%20Actions%20Syntax/2.%20Conditional-statement/" class="md-nav__link">
+        2. Conditional statement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%20GitHub%20Actions%20Syntax/3.%20Variables/" class="md-nav__link">
+        3. Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%20GitHub%20Actions%20Syntax/4.%20Events/" class="md-nav__link">
+        4. Events
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%20GitHub%20Actions%20Syntax/5.%20Keywords/" class="md-nav__link">
+        5. Keywords
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%20GitHub%20Actions%20Syntax/6.%20Cache%20and%20Artifacts/" class="md-nav__link">
+        6. Using Cache and Artifacts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%20GitHub%20Actions%20Syntax/7.%20Debugging/" class="md-nav__link">
+        7. Debugging
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          3. Package Registries and Custom Actions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          3. Package Registries and Custom Actions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.%20Package%20Registries%20and%20Custom%20Actions/1.%20Package%20Registries/" class="md-nav__link">
+        GitHub Package Registries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.%20Package%20Registries%20and%20Custom%20Actions/2.%20GitHub%20Packages%20for%20code%20packages/" class="md-nav__link">
+        GitHub Packages for code packages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.%20Package%20Registries%20and%20Custom%20Actions/3.%20Publish%20custom%20actions/" class="md-nav__link">
+        Publish a custom GitHub action
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          4. Continuos Delivery
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          4. Continuos Delivery
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4.%20Continuos%20Delivery/1.%20GitHub%20Secrets/" class="md-nav__link">
+        Storing credentials with GitHub Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4.%20Continuos%20Delivery/2.%20Deploying%20to%20Microsoft%20Azure/" class="md-nav__link">
+        Deploying to Microsoft Azure using GitHub Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4.%20Continuos%20Delivery/3.%20Create%20and%20delete%20Azure%20resources/" class="md-nav__link">
+        Create and delete Azure resources by using GitHub Actions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4.%20Continuos%20Delivery/4.%20Remove%20artifacts%2C%20create%20status%20badges%2C%20and%20configure%20environment%20protections/" class="md-nav__link">
+        Remove artifacts, create status badges, and configure environment protections
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          5. GitHub Enterprise and Usage Limits
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          5. GitHub Enterprise and Usage Limits
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20Actions%20and%20Workflows/" class="md-nav__link">
+        Action and Workflows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Manage Runners
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Manage Runners
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-access-to-self-hosted-runners" class="md-nav__link">
+    Configuring access to self-hosted runners
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-self-hosted-runners-for-enterprise-use" class="md-nav__link">
+    Configure Self-Hosted Runners for Enterprise Use
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Self-Hosted Runners for Enterprise Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#labels" class="md-nav__link">
+    Labels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy-servers" class="md-nav__link">
+    Proxy Servers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-allowlists" class="md-nav__link">
+    IP Allowlists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-and-troubleshoot-self-hosted-runners" class="md-nav__link">
+    Monitor and troubleshoot self-hosted runners
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Encrypted%20Secrets/" class="md-nav__link">
+        Manage encrypted secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20GitHub%20Usage%20Limits/" class="md-nav__link">
+        Usage limits
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          GitHub Advanced Security Accreditation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          GitHub Advanced Security Accreditation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/1.%20Introduction/" class="md-nav__link">
+        1. Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/2.%20Configure%20Dependabot%20Security%20updates%20on%20your%20GitHub%20repo/" class="md-nav__link">
+        2. Configure Dependabot Security updates on your GitHub repo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/3.%20Configure%20and%20use%20secret%20scanning%20in%20GitHub%20repository/" class="md-nav__link">
+        3. Configure and use secret scanning in GitHub repository
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/4.%20Configure%20code%20scanning%20on%20GitHub/" class="md-nav__link">
+        4. Configure code scanning on GitHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/5.%20Code%20Scanning%20with%20GitHub%20CodeQL/" class="md-nav__link">
+        5. Code Scanning with GitHub CodeQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/6.%20Identify%20security%20vulnerabilities%20in%20your%20codebase%20with%20CodeQL/" class="md-nav__link">
+        6. Identify security vulnerabilities in your codebase with CodeQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/7.%20GitHub%20administration%20for%20GitHub%20Advanced%20Security%20/" class="md-nav__link">
+        7. GitHub administration for GitHub Advanced Security 
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/8.%20Manage%20sensitive%20data%20and%20security%20policies%20within%20GitHub/" class="md-nav__link">
+        8. Manage sensitive data and security policies within GitHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/9.%20Required%20permissions/" class="md-nav__link">
+        9. Required permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/Question%20%26%20Answers/" class="md-nav__link">
+        Question & Answers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+          Instructions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_11">
+          <span class="md-nav__icon md-icon"></span>
+          Instructions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/Instructions/Code%20Scanning/" class="md-nav__link">
+        Code Scanning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/Instructions/Dependabot/" class="md-nav__link">
+        Dependabot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/Instructions/GraphQL/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GitHub%20Advanced%20Security%20Accreditation/Instructions/Secret%20Scanning/" class="md-nav__link">
+        Secret Scanning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-access-to-self-hosted-runners" class="md-nav__link">
+    Configuring access to self-hosted runners
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-self-hosted-runners-for-enterprise-use" class="md-nav__link">
+    Configure Self-Hosted Runners for Enterprise Use
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Self-Hosted Runners for Enterprise Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#labels" class="md-nav__link">
+    Labels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy-servers" class="md-nav__link">
+    Proxy Servers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip-allowlists" class="md-nav__link">
+    IP Allowlists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-and-troubleshoot-self-hosted-runners" class="md-nav__link">
+    Monitor and troubleshoot self-hosted runners
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="manage-runners">Manage Runners</h1>
+<p>GitHub Actions workflows can be executed by two types of runners: GitHub-hosted runners or selfhosted runners. GitHub-hosted runners are not supported on GitHub Enterprise Server.</p>
+<p>Reasons to use self-hosted runners:</p>
+<ul>
+<li>IP allowlist is restricted</li>
+<li>Using specialized hardware for the runners</li>
+<li>Having a very specific environment</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>GitHub-hosted runners</th>
+<th>Self-hosted runners</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Receive automatic updates for the operating system, preinstalled packages and tools, and the self-hosted runner application.</td>
+<td>Receive automatic updates for the self-hosted runner application only. You are responsible for updating the operating system and all other software. You can use cloud services or local machines that you already pay for.</td>
+</tr>
+<tr>
+<td>Are managed and maintained by GitHub.</td>
+<td>Can be customized to your hardware, operating system, software, and security requirements.</td>
+</tr>
+<tr>
+<td>Provide a clean instance for every job execution.</td>
+<td>Don't need to have a clean instance for every job execution.</td>
+</tr>
+<tr>
+<td>Use free minutes on your GitHub plan, with per-minute rates applied after surpassing the free minutes.</td>
+<td>Are free to use with GitHub Actions, but you are responsible for the cost of maintaining your runner machines.</td>
+</tr>
+</tbody>
+</table>
+<p>Interesting: self-hosted does not need to have a clean instance.</p>
+<h2 id="configuring-access-to-self-hosted-runners">Configuring access to self-hosted runners</h2>
+<ul>
+<li>
+<p>In Enterprise Cloud and Enterprise Server, self-hosted runner groups enables to control access to <code>self-hosted</code> runners at the organization and enterprise level. This feature can come in handy for cases where it requires to restrict access to <code>self-hosted</code> runners to specific organizations or users, for example based on the level of trust for these organizations or users, or to mitigate security risks.</p>
+</li>
+<li>
+<p>Let's say you want to authorize only specific organizations in your enterprise instance to deploy code to your production environment. In order to achieve this, you could create a group containing all the runners deploying code into production at enterprise level and restrict the access to the group to the specific organizations authorized to deploy code.</p>
+</li>
+<li>
+<p>To create groups at enterprise level, navigate to your enterprise account and then to <code>Policies</code> &gt; <code>Actions</code> in the sidebar. In the <code>self-hosted runners</code> tab, select <code>Add new</code> &gt; <code>New group</code>. The screen that appears will enable you to specify a group name and an access policy for organizations.</p>
+</li>
+</ul>
+<p><img alt="Create-a-group" src="../images/create-group.png" /></p>
+<p>To create groups at organization level, navigate to your organization Settings and then to Actions in the sidebar. In the Self-hosted runners section, select Add new &gt; New group. The screen that appears enables you to specify a group name and an access policy for repositories.</p>
+<p><img alt="Create-a-group" src="../images/create-group-2.png" /></p>
+<p>So essentially you can define on the enterprise level which organizations can use which groups of
+runners and on organization level you can do the same, but you define the groups for repositories.</br></p>
+<p>NOTE:</p>
+<ol>
+<li>When a runner is created it is assigned to the default group.</li>
+<li>A runner can be in only ONE group at a time.</li>
+<li>Runners can be moved from a group to another one</li>
+</ol>
+<h2 id="configure-self-hosted-runners-for-enterprise-use">Configure Self-Hosted Runners for Enterprise Use</h2>
+<p>Enterprise Cloud and Enterprise Server offer multiple features enabling to customize self-hosted runners for enterprise usage. Some of these features include <code>labels</code>, <code>proxy servers</code>, and <code>IP allowlists</code>.</p>
+<h3 id="labels">Labels</h3>
+<p>Self-hoster runners automatically receive default labels when they are added to GitHub Actions. These labels are used to identify the operating system and architecture of the runner. For example, a runner running on a Linux machine with an x64 architecture will receive the following labels:</p>
+<ul>
+<li><code>self-hosted</code> &gt; Default label for all self-hosted runners</li>
+<li><code>linux</code>, <code>windows</code>, <code>macOS</code> &gt; Applied depending on the OS</li>
+<li><code>x64</code>, <code>ARM</code>, <code>ARM64</code> &gt; Applied depending on the hardware architecture</li>
+</ul>
+<p>On top of these default labels, Enterprise Cloud and Enterprise Server offers the possibility to create and add custom labels to runners. Custom labels can come in handy for cases when it is required to identify a specific capabilities of a runner. For example if a job in worfklow requires a specific type of graphics hardware, the custom gpu label can be created and assigned to the runner that have the required hardware. <code>All runners with the gpu label would then be eligible to run the job</code>. </p>
+<p>So it is possible to define which runner is meant for which job. </p>
+<p>In order to add a label to a self-hosted runner: navigate to the GitHub Actions setting of the organization, repository, or enterprise where self-hosted runner is registered (under Actions for an orgaization on repository, under Policies &gt; Actions for an enterprise). </p>
+<ol>
+<li>
+<p>Locate the list of runners under <code>Self-hosted</code> runners. If runner is in a group, locate to runner group and select the runner dropdown to view the list of runners.</p>
+</li>
+<li>
+<p>Locate the runner to update and select the label dropdown to view the label selection menu. This menu displays all the custom labels available to your self-hosted runner. Labels already assigned to your self-hosted runner have a tick next to them.</p>
+</li>
+<li>
+<p>Click an existing label to add it to your runner or type the name of your new label in the Filter labels field and select Create new label. The label is automatically added to your runner when you create it.</p>
+</li>
+</ol>
+<h3 id="proxy-servers">Proxy Servers</h3>
+<p>If you need a self-hosted runner to communicate with GitHub via a proxy server, both Enterprise Cloud and Enterprise Server enable you to change proxy configurations using the following environment variables:</p>
+<table>
+<thead>
+<tr>
+<th>Environment variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>https_proxy</td>
+<td>Proxy URL for HTTPS traffic, including basic authentication credentials if necessary. For example: </br><code>https://proxy.local</code> </br><code>https://192.168.1.1:8080</code> </br><code>https://username:password@proxy.local</code>.</td>
+</tr>
+<tr>
+<td>http_proxy</td>
+<td>Proxy URL for HTTP traffic, including basic authentication credentials if necessary. For example: </br><code>http://proxy.local</code> </br><code>http://192.168.1.1:8080</code> </br><code>http://username:password@proxy.local</code>.</td>
+</tr>
+<tr>
+<td>no_proxy</td>
+<td>Comma-separated list of hosts that should not use a proxy. Only hostnames are allowed in no_proxy, you cannot use IP addresses. For example: </br><code>example.com</code> </br><code>example.com,myserver.local:443,example.org</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Proxy environmnet variables are read when the self-hosted runner application starts, so engineer must set the environment variables before configuring or starting the application. If proxy configuration changes, it requires to restart the self-hosted runner application.</p>
+<p>In Windows environment the proxy variable names are not case sensitive. On Linux and MacOS the recommended way is to specify all of the environment variable names in a lowercase. If there are environment variables in both uppercase and lowercase on Linux or macOS, gor example https_proxt and HTTPS_PROXY, the self-hosted runner application will use the lowercase variable.</p>
+<h3 id="ip-allowlists">IP Allowlists</h3>
+<p>If IP allowlist is configured, there should be included the IP address or IP address range of self-hosted runners in order to have a communiction between the self-hosted runner and GitHub. To add the IP address or IP address range of self-hosted runners to an organization IP allowlist, navigate to organizations Settings and select Organization security in the sidebar. Under IP Address, add the IP address or IP address range of self-hosted runners in CIDR notation and select + Add.</p>
+<h3 id="monitor-and-troubleshoot-self-hosted-runners">Monitor and troubleshoot self-hosted runners</h3>
+<p>Both Enterprise Cloud and Enterprise Server offer tools enabling to monitor, troubleshoot and update self-hosted runners. If builds start to fail, some files in repository get locker, or workflow runs are stuck, troubleshooting the runner executing the workflow can help solve the issue. The main steps to troubleshoot a self-hosted runner are:</p>
+<ol>
+<li>Ceck the status of the runner in the GitHub Actions settings of the organization, repository, or enterprise where self-hosted runner is registered: <ul>
+<li>Under <code>Actions</code> for an organization or repository </li>
+<li>Ynder <code>Policies &gt; Actions</code> for an enterprise</li>
+</ul>
+</li>
+<li>Review the activities and automatic updates of the runner in the Runner_files in the _diag folder.</li>
+<li>Review the status of the jobs of the jobs the runner executed in the Worker_ files in the _diag folder.</li>
+</ol>
+<p>According to the operation system of the runner, the extra steps can be taken as shown in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Mac</th>
+<th>Windows</th>
+<th>Linux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Check the self-hosted runner application service using <code>launchd</code></td>
+<td>Check the self-hosted runner application service using <code>PowerShell</code></td>
+<td>- Check the self-hosted runner application service using <code>journalctl</code> </br>- If jobs require containers, check that Docker is installed and running and the Docker permissions using <code>systemctl</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+    
+  </body>
+</html>
