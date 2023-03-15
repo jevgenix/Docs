@@ -37,9 +37,9 @@
 
 12. Two questions about depandabot.yml syntax:
     - First one asks about the top level keys:
-      - version and updates 
+        - version and updates 
     - the second about the keys under updates: 
-      - package-ecosystem, directory and schedule.interval
+        - package-ecosystem, directory and schedule.interval
 
 13. How many required reviewers does Depandabot assign by default without a configured depandabot.yml file? Options: 0, 1, 2 or 3
     - 0
@@ -55,11 +55,11 @@
 
 17. Question about notification settings contents. Don't remember the specific question, but familiarise yourself with those settings.
     - By default users receive notifications:
-      - By email
-      - In the GitHub UI
-      - In the GitHub mobile app
-      - On the command line
-      - In your inbox
+        - By email
+        - In the GitHub UI
+        - In the GitHub mobile app
+        - On the command line
+        - In your inbox
     - You can change the default settings in `Settings` > `Notifications` > `Dependabot alerts`
 
 18. What are the consequences of someone ignoring code scanning alerts? 
@@ -191,10 +191,10 @@
     - Interpreting the results
 
 57. What feature does QL add to the Datalog programming language?
-  - Support for aggregates
+    - Support for aggregates
 
 58. One major difference between QL and general purpose programming languages is:
-  - QL does not have any imperative features such as assignments to variables or file system operations.
+    - QL does not have any imperative features such as assignments to variables or file system operations.
 
 59. What semantics of QL are based on?
     - Datalog
