@@ -1106,6 +1106,53 @@
 </li>
 </ul>
 </li>
+<li>
+<p>Troubleshoot CodeQL results:</p>
+<ul>
+<li>You need to optimize CodeQL, if CodeQL taking too long to complete:<ul>
+<li>If you use self-hosted runners for CodeQL analysis, you can increase the memory or the number of cores.</li>
+<li>The analysis of each language runs in parallel with the default CodeQL analysis workflow in order to build a matrix of languages. You can modify your workflow to use a matrix that speeds up the analysis of multiple languages.</li>
+<li>The amount of code being analyzed may cause long runtimes. Analysis time is typically proportional to the amount of code being analyzed. You can reduce the size of the code by excluding test code or breaking the code into multiple workflows to only analyze a subset with each scan.</li>
+<li>You may want to only trigger analysis on the schedule event if your analysis is too slow while running during <code>push</code> or <code>pull_request</code> events.</li>
+</ul>
+</li>
+<li>Analysis is failing? Check following:<ul>
+<li>If Dependabot authored the commit</li>
+<li>If the pull request that includes the commit has been merged using <code>@dependabot squash and merge</code></li>
+<li>To solve it, enable auto-merge for your repository</li>
+</ul>
+</li>
+<li>Best practices:<ul>
+<li>Eliminate cartesian products</li>
+<li>Use specific types</li>
+<li>Determine the nist soecufuc types of a variable</li>
+<li>Avoid comple recursion</li>
+<li>Fold predicates:<ul>
+<li>linear, prevents too much branching</li>
+<li>tightly bount, the chunks join with each other on as many variables as possible</li>
+</ul>
+</li>
+<li>Debug data-flow queries using partial flow</li>
+<li>Debug artifacts</li>
+<li>Troubleshoot CodeQL for VS Code</li>
+</ul>
+</li>
+<li>Common error messages:<ul>
+<li><code>Server error</code>: Try running the workflow again if the run of a workflow for code scanning fails due to a server error.</li>
+<li><code>Out of disk</code> or <code>out of memory</code>: Contact GitHub Support so that they can investigate this type of issue on a hosted GitHub Actions runner.</li>
+<li><code>403 Resource not accessible by integration</code>: Use <code>pull_request</code> event instead of <code>push</code> event.</li>
+<li><code>git checkout HEAD^2 is no longer necessary</code>: use <code>github/checkout</code> action instead of using <code>git checkout HEAD^2</code> in your workflow.</li>
+</ul>
+</li>
+<li>Important to keep in mind:<ul>
+<li>CodeQL predicates and classes are evaluated to database tables.</li>
+<li>Large predicates generate large tables with many rows, and are therefore expensive to compute</li>
+<li>The QL language is implemented using standard database operations and relational algebra, such as join, projection, and union.</li>
+<li>Queries are evaluated bottom-up, which means that a predicate is not evaluated until all of the predicates that it depends on are evaluated.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
 
 
