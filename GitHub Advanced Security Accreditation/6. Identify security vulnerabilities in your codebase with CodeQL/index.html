@@ -1151,6 +1151,11 @@
 <li>Queries are evaluated bottom-up, which means that a predicate is not evaluated until all of the predicates that it depends on are evaluated.</li>
 </ul>
 </li>
+<li>Also nice to know:<ul>
+<li>You may see different results depending on whether you run the CodeQL analysis workflow on Linux, macOS, or Windows, or if you're analyzing code written in Python.</li>
+<li>The CodeQL analysis workflow tries to install and analyze Python dependencies, which could lead to more results on GitHub-hosted runners that use Linux. To disable the auto-install, add <code>setup-python-dependencies: false</code> to the "Initialize CodeQL" step of the workflow.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
