@@ -953,13 +953,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-code-scanning-with-third-party-analysis" class="md-nav__link">
-    Enabling Code Scanning with third-party analysis
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#code-scanning-with-github-actions-and-codeql" class="md-nav__link">
     Code scanning with GitHub Actions and CodeQL
   </a>
@@ -1062,13 +1055,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-code-scanning-with-third-party-analysis" class="md-nav__link">
-    Enabling Code Scanning with third-party analysis
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#code-scanning-with-github-actions-and-codeql" class="md-nav__link">
     Code scanning with GitHub Actions and CodeQL
   </a>
@@ -1103,12 +1089,14 @@
 <li>Choose whether you'd like to commit directly to the default branch, or create a new branch and start a pull request.</li>
 <li>Click <code>Commit new file</code> or <code>Propose new file</code>.</li>
 </ol>
-<h4 id="enabling-code-scanning-with-third-party-analysis">Enabling Code Scanning with third-party analysis</h4>
 <h4 id="code-scanning-with-github-actions-and-codeql">Code scanning with GitHub Actions and CodeQL</h4>
 <ol>
-<li>Go to the Security tab of your repository.</li>
-<li>To the right of Code scanning alerts, click Set up code scanning. If code scanning is missing, this means you need to enable GitHub Advanced Security.</li>
-<li>Under Get started with code scanning, click Set up this workflow on the CodeQL analysis workflow or on a third-party workflow. Note: Workflows are only displayed if they are relevant for the programming languages detected in the repository. The CodeQL analysis workflow is always displayed, but the "Set up this workflow" button is only enabled if CodeQL analysis supports the languages present in the repository.</li>
+<li>Go to the <code>Security</code> tab of your repository.</li>
+<li>To the right of <code>Code scanning alerts</code>, click <code>Set up code scanning</code>. If code scanning is missing, this means you need to enable GitHub Advanced Security.</li>
+<li>Under <code>Get started with code scanning</code>, click <code>Set up this workflow</code> on the CodeQL analysis workflow or on a third-party workflow. <ul>
+<li>Note: Workflows are only displayed if they are relevant for the programming languages detected in the repository. The CodeQL analysis workflow is always displayed, but the "Set up this workflow" button is only enabled if CodeQL analysis supports the languages present in the repository.</li>
+</ul>
+</li>
 <li>To customize how code scanning scans your code, edit the workflow. Generally you can commit the CodeQL analysis workflow without making any changes to it. However, many of the third-party workflows require additional configuration, so read the comments in the workflow before committing.</li>
 <li>Use the Start commit drop-down, and type a commit message.</li>
 <li>Choose whether you'd like to commit directly to the default branch, or create a new branch and start a pull request.</li>

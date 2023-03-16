@@ -1023,16 +1023,21 @@
 <li>
 <p>Dependabot alerts:</p>
 <ul>
-<li>By default, only repository owners and administrators are able to receive and dismiss alerts.</li>
+<li>Maintainable only by organization owners and administrators.</li>
+<li>By default, only repository owners and administrators are able to receive and dismiss alerts.<ul>
 <li>Administrators and owners grant other teams and users with access to the repository, permissions to view and dismiss alerts. <code>Code security and analysis</code> &gt; <code>Access to alerts</code></li>
+</ul>
+</li>
+<li>By default, only repository owners and administrators are able to receive Dependabot alerts for their repositories.<ul>
+<li>Administrators and onwers can grant other teams and users with access to the repository, permission to view and dismiss Dependabot alerts</li>
+</ul>
+</li>
 <li>Repository administrators and owners can set up Dependabot alerts for private repositories and for some GHES repositories. <ul>
 <li>By enabling these features, GitHub get permission to perform <code>read-only</code> analysis of those specific repositories.</li>
 </ul>
 </li>
-<li>Only organization owner can enable the dependency graph and Dependabot alerts for all of the repositories at once.</li>
+<li>Only organization owner can enable the dependency graph and Dependabot alerts for all of the repositories at once.<ul>
 <li>Owner of GitHub Enterprise, who is also owner of the connected GitHub Cloud organization or enterprise account can enable the dependency graph and Dependabot alerts for GitHub Server instance.</li>
-<li>By default, only repository owners and administrators are able to receive Dependabot alerts for their repositories.<ul>
-<li>Administrators and onwers can grant other teams and users with access to the repository, permission to view and dismiss Dependabot alerts</li>
 </ul>
 </li>
 </ul>
@@ -1040,9 +1045,12 @@
 <li>
 <p>Secret Scanning:</p>
 <ul>
-<li>Feature is available for all public repositories, and for private repositories owned by organizations with enabled GHAS license.</li>
+<li>Maintainable only by organization owners and administrators.</li>
+<li>Feature is available for all public repositories, and for private repositories owned by organizations with enabled GHAS license.<ul>
 <li>For public repositories it cannot be configured or turned off.</li>
 <li>Must be enabled manually on private repositories</li>
+</ul>
+</li>
 <li>Administrators and organization onwers can give view access to security alerts to people or teams who have write access to the repository.</li>
 <li>Mainly can be configured in <code>Settings</code> &gt; <code>Security &amp; analysis</code></li>
 <li>GitHub notifies the following users of secret scanning alerts on a repository:<ul>
@@ -1056,6 +1064,7 @@
 <li>
 <p>Code Scanning:</p>
 <ul>
+<li>Maintainable for everyone with a write permission to a repository.</li>
 <li>Requires write permissions to a repository to set up or configure code scanning</li>
 <li>Can be controlled mainly in <code>security</code> tab of the repository</li>
 <li>The CodeQL CLI is free to use on public repositories that are maintained on GitHub.com, and available to use on private repositories that are owned by customers with an Advanced Security license.</li>
@@ -1064,6 +1073,7 @@
 <li>
 <p>Security policies:</p>
 <ul>
+<li>Only GitHub Enterprise administrators and organization owners can configure organization security settings.</li>
 <li>Using policies, administrator can set security policies individually at each level of control: repository, organization, or enterprise.</li>
 <li>Administrator can grant owners access control or make enterprise-wide access restrictions.</li>
 <li>The permissions adminstrator can grant to users on each level of control are:<ul>
@@ -1071,14 +1081,13 @@
 <li><code>Read</code></li>
 <li><code>Write</code></li>
 <li><code>Admin</code></li>
-</ul>
-</li>
 <li>This permissions can be granted:<ul>
 <li>For <code>organization</code>: <code>Settings</code> &gt; <code>You organization</code></li>
 <li>For <code>enterprise</code>: <code>Your enterprise</code> &gt; <code>Policies</code> &gt; <code>Repository policies</code></li>
 </ul>
 </li>
-<li>Only GitHub Enterprise administrators and organization owners can configure organization security settings.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>

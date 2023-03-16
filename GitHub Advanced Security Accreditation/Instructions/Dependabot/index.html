@@ -1035,13 +1035,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#graphql-exporer" class="md-nav__link">
-    GraphQL Exporer
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1192,13 +1185,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#graphql-exporer" class="md-nav__link">
-    GraphQL Exporer
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1219,9 +1205,9 @@
 <h3 id="enable-the-dependency-graph-for-private-repositories">Enable the dependency graph for private repositories</h3>
 <ol>
 <li>Go to your GitHub repository.</li>
-<li>Select your repository Settings.</li>
-<li>Select Code security and analysis.</li>
-<li>Select Enable in the dependency graph section</li>
+<li>Select your repository <code>Settings</code>.</li>
+<li>Select <code>Code security and analysis</code>.</li>
+<li>Select <code>Enable</code> in the dependency graph section</li>
 </ol>
 <h3 id="view-the-dependency-graph">View the dependency graph</h3>
 <ol>
@@ -1257,16 +1243,20 @@
 </ol>
 <h4 id="resolve-dependabot-alerts">Resolve Dependabot alerts</h4>
 <p>After Dependabot alerts are enabled, it requires to create a process to regularly review and resolve the them.
-The following steps explain how to resolve Dependabot alerts:
-1. Go to the main page of the repository
-2. Select the <code>Security tab</code> for the repository
-3. Select <code>Dependabot alerts</code> from the security sidebar. A list of the Dependabot alerts for that repository will display
-4. Select the alert you would like to view.
-5. Review the alert details. In some cases, the alert may contain a pull request with an automated security update.
-6. Resolve the alert by taking one of the following actions:
-    - Review and merge the pull request.
-    - Select Create Dependabot security update to manually fix the vulnerability.
-    - Select the Dismiss dropdown and choose a reason for dismissing the vulnerability.</p>
+The following steps explain how to resolve Dependabot alerts:</p>
+<ol>
+<li>Go to the main page of the repository</li>
+<li>Select the <code>Security tab</code> for the repository</li>
+<li>Select <code>Dependabot alerts</code> from the security sidebar. A list of the Dependabot alerts for that repository will display</li>
+<li>Select the alert you would like to view.</li>
+<li>Review the alert details. In some cases, the alert may contain a pull request with an automated security update.</li>
+<li>Resolve the alert by taking one of the following actions:<ul>
+<li>Review and merge the pull request.</li>
+<li>Select Create Dependabot security update to manually fix the vulnerability.</li>
+<li>Select the Dismiss dropdown and choose a reason for dismissing the vulnerability.</li>
+</ul>
+</li>
+</ol>
 <h3 id="manually-enable-security-updates">Manually enable security updates</h3>
 <ol>
 <li>Sign in to your GitHub account and select your profile photo from the upper-right.</li>
@@ -1296,17 +1286,6 @@ The following steps explain how to resolve Dependabot alerts:
 <li>Start typing the name of the repository you want to allow.</li>
 <li>Select the repository you want to allow.</li>
 <li>Optionally, to remove a repository from the list, go to the right of the repository and select X.</li>
-</ol>
-<h3 id="graphql-exporer">GraphQL Exporer</h3>
-<ol>
-<li>Get a properly configured OAuth token.</li>
-<li>Open GraphiQL.</li>
-<li>In the upper-right corner of GraphiQL, select <code>Edit HTTP Headers</code>.</li>
-<li>In the <code>Key</code> field, enter 'Authorization'. In the <code>Value</code> field, enter <code>Bearer &lt;token&gt;</code>, where <code>&lt;token&gt;</code> is your generated OAuth token.</li>
-<li>Select the checkmark to the right of the token to save it.</li>
-<li>To return to the editor, select outside of the <code>Edit HTTP Headers</code> modal.</li>
-<li>In the <code>GraphQL Endpoint</code> field, enter <code>https://api.github.com/graphql</code>.</li>
-<li>In the <code>Method</code> dropdown, select <code>Post</code>.</li>
 </ol>
 
 
