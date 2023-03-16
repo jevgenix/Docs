@@ -1,8 +1,8 @@
 ### Enable the dependency graph for private repositories
 1. Go to your GitHub repository.
-2. Select your repository Settings.
-3. Select Code security and analysis.
-4. Select Enable in the dependency graph section
+2. Select your repository `Settings`.
+3. Select `Code security and analysis`.
+4. Select `Enable` in the dependency graph section
 
 
 ### View the dependency graph
@@ -40,6 +40,7 @@
 #### Resolve Dependabot alerts
 After Dependabot alerts are enabled, it requires to create a process to regularly review and resolve the them.
 The following steps explain how to resolve Dependabot alerts:
+
 1. Go to the main page of the repository
 2. Select the `Security tab` for the repository
 3. Select `Dependabot alerts` from the security sidebar. A list of the Dependabot alerts for that repository will display
@@ -78,14 +79,3 @@ The following steps explain how to resolve Dependabot alerts:
 3. Start typing the name of the repository you want to allow.
 4. Select the repository you want to allow.
 5. Optionally, to remove a repository from the list, go to the right of the repository and select X.
-
-
-### GraphQL Exporer
-1. Get a properly configured OAuth token.
-2. Open GraphiQL.
-3. In the upper-right corner of GraphiQL, select `Edit HTTP Headers`.
-4. In the `Key` field, enter 'Authorization'. In the `Value` field, enter `Bearer <token>`, where `<token>` is your generated OAuth token.
-5. Select the checkmark to the right of the token to save it.
-6. To return to the editor, select outside of the `Edit HTTP Headers` modal.
-7. In the `GraphQL Endpoint` field, enter `https://api.github.com/graphql`.
-8. In the `Method` dropdown, select `Post`.

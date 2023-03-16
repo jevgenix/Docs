@@ -116,14 +116,14 @@
 35. Where can you configure the recipients of secret scanning alerts?
     - In the Security and analysis settings of a repository
 
-36. How many custom patterns can you create for an organization?
-    - 500
+36. How many custom secret patterns can you create?
+    - 500 for enterprise/organization and 100 per private repository
 
 37. When code scanning is enabled, what is one default event that triggers a scan?
     - Pushing a change.
 
-38. Which of the following are the tools used to upload a SARIF file?
-    - The tools used are GitHub Actions, the code scanning API, and the CodeQL CLI.
+38. What tools are used to upload a SARIF file?
+    - GitHub Actions, the code scanning API, and the CodeQL CLI.
 
 39. What is the difference between scheduled versus triggered events in code scanning?
     - Scheduled events run based on a specified schedule and triggered events run on code events such a push.
@@ -149,7 +149,7 @@
     - Automatically looks in all of its sibling directories for the files used in the database creation and analysis
 
 46. By default, which severity level will cause a pull request check failure when using code scanning?
-    - Error
+    - Error, and high or critical
 
 47. Which is one way to optimize CodeQL analysis runtimes?
     - Increase the memory
@@ -289,7 +289,7 @@
         java:
           - scope/java-pack1
           - scope/java-pack2@v1.0.0
-      ```
+    ```
 
 76. What are the commands in order to analyze or upload results to GitHub?
     - `codeql database analyze`
@@ -362,7 +362,6 @@
     - `dependabot.yml`: for Dependabot configuration
     - QL pack must contain a `qlpack.yml` file
     - code scanning workflow file must be named as `codeql-config.yml`
-    - 
   
 
 97. Who will the secret scanning tool notify about the breach?
@@ -377,7 +376,7 @@
 100. How CodeQL works during data base creation for interpreted languages?
     - CodeQL extracts a single relation representation of each source file in the codebase by running on the source code, resolving dependencies to give an accurate representation of the codebase.
 
-101. How many options users have for specigying which queries to run with CodeQL code scanning?
+101. How many options users have for specifying which queries to run with CodeQL code scanning?
     - Two options, using code scanning workflow or a custom configuration file.
 
 102. What are the options to specify the additional queries?
@@ -403,7 +402,7 @@
     - `code-scanning, security-extended and security-and-quality`
 
 107. What is the action to take to specify the configuration file for CodeQL code scanning in the workflow file?
-    - by using `github/codeql-action/inite@v1` along with `with: config-file: <path-to-config-file>` parameter.
+    - by using `github/codeql-action/init@v1` along with `with: config-file: <path-to-config-file>` parameter.
 
 108. How to refernce to a configuration file located in a external repositroy?
     - by using `OWNER/REPOSITORY/FILENAME@BRANCH` syntax
